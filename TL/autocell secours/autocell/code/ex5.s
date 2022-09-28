@@ -44,7 +44,6 @@ L4 :
   add r0, r0, r1
   goto_lt L0, r0, r3
 STOP
-
 L5 :
   invoke 4, 1, 0
   goto L4
