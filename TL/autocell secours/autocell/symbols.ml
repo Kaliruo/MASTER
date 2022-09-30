@@ -6,7 +6,7 @@ let lab_cnt = ref 0
 
 
 (** Map of variables. *)
-let var_map : int Stdlib__hashtbl.Make(Common.StringHash).t = StringHashtbl.create 255
+let var_map : int StringHashtbl.t = StringHashtbl.create 255
 
 
 (** List of fields. *)

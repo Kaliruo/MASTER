@@ -54,6 +54,7 @@ let rec make_when f v ws =
 %token DOT_DOT
 %token DOT
 
+%token PLUS
 /* values */
 %token <string> ID
 %token<int> INT
@@ -98,18 +99,22 @@ field:
 opt_statements:
 	/* empty */
 		{ NOP }
-|	statement
+|	statement opt_statements
 		{ $1 }
 ;
 
 
 statement:
-	cell ASSIGN expression
+	cell ASSIGN expressions
 		{
 			if (fst $1) != 0 then error "assigned x must be 0";
 			if (snd $1) != 0 then error "assigned Y must be 0";
 			SET_CELL (0, $3)
 		}
+|	ID ASSIGN expressions
+		{NOP}
+		
+
 ;
 
 
@@ -122,11 +127,21 @@ cell:
 		}
 ;
 
+expressions : 
+	expression PLUS expressions
+		{NONE}
+|	expression
+		{NONE}
+		
 expression:
 	cell
 		{ CELL (0, fst $1, snd $1) }
 |	INT
 		{ CST $1 }
+|	ID	
+		{NONE}
+		
+		
 ;
 
 
