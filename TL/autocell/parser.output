@@ -18,14 +18,17 @@
 
   11  cell : LBRACKET INT COMMA INT RBRACKET
 
-  12  expressions : expression PLUS expressions
-  13              | expression
+  12  expressions : expressions MULT expressions
+  13              | expressions SUB expression
+  14              | expressions PLUS expression
+  15              | expression
 
-  14  expression : cell
-  15             | INT
-  16             | ID
+  16  expression : LPAR expressions RPAR
+  17             | cell
+  18             | INT
+  19             | ID
 
-  17  %entry% : '\001' program
+  20  %entry% : '\001' program
 
 state 0
 	$accept : . %entry% $end  (0)
@@ -37,7 +40,7 @@ state 0
 
 
 state 1
-	%entry% : '\001' . program  (17)
+	%entry% : '\001' . program  (20)
 
 	INT  shift 3
 	.  error
@@ -59,9 +62,9 @@ state 3
 
 
 state 4
-	%entry% : '\001' program .  (17)
+	%entry% : '\001' program .  (20)
 
-	.  reduce 17
+	.  reduce 20
 
 
 state 5
@@ -232,13 +235,14 @@ state 26
 	statement : ID ASSIGN . expressions  (10)
 
 	LBRACKET  shift 18
-	ID  shift 32
-	INT  shift 33
+	LPAR  shift 32
+	ID  shift 33
+	INT  shift 34
 	.  error
 
-	cell  goto 34
-	expressions  goto 35
-	expression  goto 36
+	cell  goto 35
+	expressions  goto 36
+	expression  goto 37
 
 
 state 27
@@ -257,13 +261,14 @@ state 29
 	statement : cell ASSIGN . expressions  (9)
 
 	LBRACKET  shift 18
-	ID  shift 32
-	INT  shift 33
+	LPAR  shift 32
+	ID  shift 33
+	INT  shift 34
 	.  error
 
-	cell  goto 34
-	expressions  goto 37
-	expression  goto 36
+	cell  goto 35
+	expressions  goto 38
+	expression  goto 37
 
 
 state 30
@@ -275,81 +280,180 @@ state 30
 state 31
 	cell : LBRACKET INT COMMA . INT RBRACKET  (11)
 
-	INT  shift 38
+	INT  shift 39
 	.  error
 
 
 state 32
-	expression : ID .  (16)
+	expression : LPAR . expressions RPAR  (16)
 
-	.  reduce 16
+	LBRACKET  shift 18
+	LPAR  shift 32
+	ID  shift 33
+	INT  shift 34
+	.  error
+
+	cell  goto 35
+	expressions  goto 40
+	expression  goto 37
 
 
 state 33
-	expression : INT .  (15)
+	expression : ID .  (19)
+
+	.  reduce 19
+
+
+state 34
+	expression : INT .  (18)
+
+	.  reduce 18
+
+
+state 35
+	expression : cell .  (17)
+
+	.  reduce 17
+
+
+state 36
+	statement : ID ASSIGN expressions .  (10)
+	expressions : expressions . MULT expressions  (12)
+	expressions : expressions . SUB expression  (13)
+	expressions : expressions . PLUS expression  (14)
+
+	PLUS  shift 41
+	SUB  shift 42
+	MULT  shift 43
+	EOF  reduce 10
+	LBRACKET  reduce 10
+	ID  reduce 10
+
+
+state 37
+	expressions : expression .  (15)
 
 	.  reduce 15
 
 
-state 34
-	expression : cell .  (14)
-
-	.  reduce 14
-
-
-state 35
-	statement : ID ASSIGN expressions .  (10)
-
-	.  reduce 10
-
-
-state 36
-	expressions : expression . PLUS expressions  (12)
-	expressions : expression .  (13)
-
-	PLUS  shift 39
-	EOF  reduce 13
-	LBRACKET  reduce 13
-	ID  reduce 13
-
-
-state 37
-	statement : cell ASSIGN expressions .  (9)
-
-	.  reduce 9
-
-
 state 38
-	cell : LBRACKET INT COMMA INT . RBRACKET  (11)
+	statement : cell ASSIGN expressions .  (9)
+	expressions : expressions . MULT expressions  (12)
+	expressions : expressions . SUB expression  (13)
+	expressions : expressions . PLUS expression  (14)
 
-	RBRACKET  shift 40
-	.  error
+	PLUS  shift 41
+	SUB  shift 42
+	MULT  shift 43
+	EOF  reduce 9
+	LBRACKET  reduce 9
+	ID  reduce 9
 
 
 state 39
-	expressions : expression PLUS . expressions  (12)
+	cell : LBRACKET INT COMMA INT . RBRACKET  (11)
 
-	LBRACKET  shift 18
-	ID  shift 32
-	INT  shift 33
+	RBRACKET  shift 44
 	.  error
-
-	cell  goto 34
-	expressions  goto 41
-	expression  goto 36
 
 
 state 40
+	expressions : expressions . MULT expressions  (12)
+	expressions : expressions . SUB expression  (13)
+	expressions : expressions . PLUS expression  (14)
+	expression : LPAR expressions . RPAR  (16)
+
+	PLUS  shift 41
+	SUB  shift 42
+	MULT  shift 43
+	RPAR  shift 45
+	.  error
+
+
+state 41
+	expressions : expressions PLUS . expression  (14)
+
+	LBRACKET  shift 18
+	LPAR  shift 32
+	ID  shift 33
+	INT  shift 34
+	.  error
+
+	cell  goto 35
+	expression  goto 46
+
+
+state 42
+	expressions : expressions SUB . expression  (13)
+
+	LBRACKET  shift 18
+	LPAR  shift 32
+	ID  shift 33
+	INT  shift 34
+	.  error
+
+	cell  goto 35
+	expression  goto 47
+
+
+state 43
+	expressions : expressions MULT . expressions  (12)
+
+	LBRACKET  shift 18
+	LPAR  shift 32
+	ID  shift 33
+	INT  shift 34
+	.  error
+
+	cell  goto 35
+	expressions  goto 48
+	expression  goto 37
+
+
+state 44
 	cell : LBRACKET INT COMMA INT RBRACKET .  (11)
 
 	.  reduce 11
 
 
-state 41
-	expressions : expression PLUS expressions .  (12)
+state 45
+	expression : LPAR expressions RPAR .  (16)
 
-	.  reduce 12
+	.  reduce 16
 
 
-16 terminals, 11 nonterminals
-18 grammar rules, 42 states
+state 46
+	expressions : expressions PLUS expression .  (14)
+
+	.  reduce 14
+
+
+state 47
+	expressions : expressions SUB expression .  (13)
+
+	.  reduce 13
+
+
+48: shift/reduce conflict (shift 41, reduce 12) on PLUS
+48: shift/reduce conflict (shift 42, reduce 12) on SUB
+48: shift/reduce conflict (shift 43, reduce 12) on MULT
+state 48
+	expressions : expressions . MULT expressions  (12)
+	expressions : expressions MULT expressions .  (12)
+	expressions : expressions . SUB expression  (13)
+	expressions : expressions . PLUS expression  (14)
+
+	PLUS  shift 41
+	SUB  shift 42
+	MULT  shift 43
+	EOF  reduce 12
+	LBRACKET  reduce 12
+	RPAR  reduce 12
+	ID  reduce 12
+
+
+State 48 contains 3 shift/reduce conflicts.
+
+
+20 terminals, 11 nonterminals
+21 grammar rules, 49 states

@@ -42,6 +42,10 @@ rule token = parse
 |	'.'				{ DOT }
 |	".."			{ DOT_DOT}
 |	'+'			{PLUS}
+|	'-'			{SUB}
+|	'*'			{MULT}
+|	'('			{LPAR}
+|	')'			{RPAR}
 |	','				{ COMMA }
 |	'['				{ LBRACKET }
 |	']'				{ RBRACKET }
