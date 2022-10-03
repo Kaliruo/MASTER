@@ -113,14 +113,17 @@ let get_reg state i =
 	@param status	Status of the execution.
 	@param messages	Messages to display. *)
 let answer_exec status messages =
+	let state = Vm.get_istate !current_vm in
+	let (x, y) = Cell.current_cell state in
 	answer_json (json_to_string (
 		JRECORD [
 			("status", JINT status);
 			("pc", JINT (Vm.get_pc !current_vm));
 			("messages", JARRAY (fun f -> List.iter (fun m -> f (JSTR m)) messages));
 			("gen", JINT !gen);
-			("x", JINT (get_reg !current_vm 0));
-			("y", JINT (get_reg !current_vm 1))
+			("x", JINT x);
+			("y", JINT y);
+			("next", JINT (Cell.get_next state 0 x y))
 		]
 	))
 
@@ -157,10 +160,13 @@ let do_map server path req =
 
 (** Get the current state about the map. *)
 let do_state server path req =
+	let next = ((List.assoc "next") req.S.Request.query) = "true" in
 	let s = Vm.get_istate !current_vm in
 	let w = Cell.width s in
 	let h = Cell.height s in
-	let get = Cell.get_current s 0 in
+	let get =
+		if next then Cell.get_next s 0
+		else Cell.get_current s 0 in
 
 	let rec col x y =
 		if x >= w - 1

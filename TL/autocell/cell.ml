@@ -40,6 +40,8 @@ type map = int array array array
 type point = int * int
 type dim = int * int * int
 type look = string list
+
+(** (current cell, dimension, current map, next map, look) *) 
 type state = point * dim * map * map * look
 
 let null_matrix = Array.make 0 (Array.make 0 (Array.make 0 0))
@@ -152,7 +154,7 @@ let set_current state fld x y value =
 	state
 
 
-(** Let the value of the current at (x, y).
+(** Get the value of the current map at (x, y).
 	@param state	State.
 	@param fld		Field.
 	@param x		X coordinate.
@@ -161,6 +163,25 @@ let set_current state fld x y value =
 let get_current state fld x y =
 	let (_, _, c, _, _) = state in
 	c.(fld).(x).(y)
+
+
+(** Get the value of the next map at (x, y).
+	@param state	State.
+	@param fld		Field.
+	@param x		X coordinate.
+	@param y		Y coordinate.
+	@return			Value. *)
+let get_next state fld x y =
+	let (_, _, _, n, _) = state in
+	n.(fld).(x).(y)
+
+
+(** Get the coordinates of the current cell.
+	@param state	State to look in.
+	@return			(x, y) of the current cell. *)
+let current_cell state =
+	let ((x, y), _, _, _, _) = state in
+	(x, y)
 
 
 (** Implements the invokation to the application from the VM.

@@ -25,6 +25,8 @@ let line = ref 1
 let digit = ['0'-'9']
 let sign = ['+' '-']
 let dec = sign? digit+
+let char=['A'-'Z' 'a'-'z']
+let id=char (char digit '_')*
 
 rule token = parse
 	'\n'			{ incr line; token lexbuf }
@@ -36,15 +38,15 @@ rule token = parse
 
 |	"end"			{ END }
 |	"of"			{ OF }
-
 |	":="			{ ASSIGN }
 |	'.'				{ DOT }
 |	".."			{ DOT_DOT}
+|	'+'			{PLUS}
 |	','				{ COMMA }
 |	'['				{ LBRACKET }
 |	']'				{ RBRACKET }
 |	dec	as n		{ INT (int_of_string n) }
-
+|	id      as i		{ ID (i)} 
 |	eof				{ EOF }
 |	_ as c			{ raise (LexerError (sprintf "illegal char '%c'" c)) }
 
