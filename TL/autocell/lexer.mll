@@ -44,6 +44,8 @@ rule token = parse
 |	'+'			{PLUS}
 |	'-'			{SUB}
 |	'*'			{MULT}
+|	'/'			{DIV}
+|	'%'			{MOD}
 |	'('			{LPAR}
 |	')'			{RPAR}
 |	','				{ COMMA }

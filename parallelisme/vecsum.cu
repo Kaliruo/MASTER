@@ -9,7 +9,9 @@
 __global__ void kreduce(unsigned int *d_vec, int n){
 	unsigned int tid= threadIdx.x;
 	unsigned int offset;
+	printf("oui%u\n",tid);
 	for(offset=1; offset<= n/2; offset*=2){
+		printf("oui%u\n",offset);
 		if((tid%(2*offset))==0 && tid<n){
 			d_vec[tid]+=d_vec[tid+offset];}
 		__syncthreads();}
@@ -19,8 +21,10 @@ __global__ void kreduce(unsigned int *d_vec, int n){
 void reduce(unsigned int *vec, unsigned int *sum, int size){
 	unsigned int *d_vec;
 	int bytes = size*sizeof(unsigned int);
+	printf("oui%i\n",bytes);
 	cudaMalloc((void**)&d_vec, bytes);
 	cudaMemcpy(d_vec, vec, bytes, cudaMemcpyHostToDevice);
+	
 	kreduce<<<1,size>>>(d_vec, size);
 
 	cudaMemcpy(sum, d_vec, sizeof(unsigned int), cudaMemcpyDeviceToHost);

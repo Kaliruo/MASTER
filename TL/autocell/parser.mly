@@ -57,6 +57,8 @@ let rec make_when f v ws =
 %token PLUS
 %token SUB
 %token MULT
+%token DIV
+%token MOD
 %token LPAR RPAR
 /* values */
 %token <string> ID
@@ -131,32 +133,37 @@ cell:
 ;
 
 expressions : 
-	expressions MULT expressions
-		{printf "*\n";
-		NONE}
-|	expressions SUB expression
-		{printf "-\n"; 
-		NONE}
-|	expressions PLUS expression
-		{printf "+\n"; 
-		NONE}
-|	expression
+	expressions SUB T
 		{NONE}
-		
+|	expressions PLUS T
+		{NONE}
+|	T
+		{NONE}
+
+
+T :
+	expression
+		{NONE}
+|	T MULT expression
+		{NONE}
+|	T DIV expression
+		{NONE}
+|	T MOD expression
+		{NONE}
+| 	SUB expression
+		{NONE}
+| 	PLUS expression
+		{NONE}
+
 expression:
 	LPAR expressions RPAR
-		{printf "(\n";
-		printf ")\n";
-		$2}
+		{$2}
 |	cell
-		{ printf "[%d, %d]\n" (fst $1) (snd $1);
-		 CELL (0, fst $1, snd $1) }
+		{CELL (0, fst $1, snd $1) }
 |	INT
-		{ printf "%d\n" $1; 
-		CST $1 }
+		{CST $1 }
 |	ID	
-		{ printf "%s\n" $1;
-		NONE}
+		{NONE}
 		
 ;
 
