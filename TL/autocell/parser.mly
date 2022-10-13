@@ -66,7 +66,6 @@ let rec make_when f v ws =
 
 %start program
 %type<Ast.prog> program
-
 %%
 
 program: INT DIMENSIONS OF config END opt_statements EOF
@@ -117,7 +116,8 @@ statement:
 			SET_CELL (0, $3)
 		}
 |	ID ASSIGN expressions
-		{NOP}
+		{let id = declare_var $1 in
+		SET_VAR(id,$3)}
 		
 
 ;
@@ -134,26 +134,26 @@ cell:
 
 expressions : 
 	expressions SUB T
-		{NONE}
+		{BINOP(OP_SUB, $1, $3)}
 |	expressions PLUS T
-		{NONE}
+		{BINOP(OP_ADD, $1, $3)}
 |	T
-		{NONE}
+		{$1}
 
 
 T :
 	expression
-		{NONE}
+		{$1}
 |	T MULT expression
-		{NONE}
+		{BINOP(OP_MUL, $1, $3)}
 |	T DIV expression
-		{NONE}
+		{BINOP(OP_DIV, $1, $3)}
 |	T MOD expression
-		{NONE}
+		{BINOP(OP_MOD, $1, $3)}
 | 	SUB expression
-		{NONE}
+		{NEG ($2)}
 | 	PLUS expression
-		{NONE}
+		{$2}
 
 expression:
 	LPAR expressions RPAR
@@ -163,9 +163,9 @@ expression:
 |	INT
 		{CST $1 }
 |	ID	
-		{NONE}
+		{let id = get_var $1 in
+		if (id = -1) then error "var non assignee" else VAR(id);}
 		
 ;
-
 
 

@@ -66,6 +66,16 @@ let rec comp_expr e =
 		(v, [
 			INVOKE (cGET + f, v, pos x y)
 		])
+	|CST(e) ->
+		let v= new_reg() in 
+		(v, [
+				SETI (v,e)
+		])
+	|VAR(e) ->
+		let v= new_reg() in 
+		(v, [
+				SET (v,e)
+		])
 	| _ ->
 		failwith "bad expression"
 
@@ -97,6 +107,11 @@ let rec comp_stmt s =
 		let (v, q) = comp_expr e in
 		q @ [
 			INVOKE (cSET, v, f)
+		]
+	|SET_VAR(v1,v2) ->
+		let(v,q)= comp_expr v2 in
+		q @ [
+			INVOKE (cSET, v1, v)
 		]
 	| _ ->
 		failwith "bad instruction"
