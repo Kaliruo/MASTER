@@ -60,6 +60,19 @@ let rec make_when f v ws =
 %token DIV
 %token MOD
 %token LPAR RPAR
+
+%token IF
+%token THEN 
+%token END
+%token ELSE
+
+%token INF
+%token SUP
+%token INFEQ
+%token SUPEQ
+%token EQ
+%token NEQ
+
 /* values */
 %token <string> ID
 %token<int> INT
@@ -118,9 +131,27 @@ statement:
 |	ID ASSIGN expressions
 		{let id = declare_var $1 in
 		SET_VAR(id,$3)}
+|	IF cond THEN opt_statements END
+		{IF_THEN($2,$4,NOP)}
+|	IF cond THEN opt_statements ELSE opt_statements END
+		{IF_THEN($2,$4,$6)}
 		
 
 ;
+
+cond :
+	expressions SUP expressions
+	{COMP(COMP_GT,$1,$3)}
+| 	expressions INF expressions
+	{COMP(COMP_LT,$1,$3)}
+| 	expressions SUPEQ expressions
+	{COMP(COMP_GE,$1,$3)}
+| 	expressions INFEQ expressions
+	{COMP(COMP_LE,$1,$3)}
+| 	expressions EQ expressions
+	{COMP(COMP_EQ,$1,$3)}
+| 	expressions NEQ expressions
+	{COMP(COMP_NE,$1,$3)}
 
 
 cell:

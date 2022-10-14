@@ -28,6 +28,7 @@ let dec = sign? digit+
 let char=['A'-'Z' 'a'-'z']
 let id=char (char digit '_')*
 
+
 rule token = parse
 	'\n'			{ incr line; token lexbuf }
 |	[' ' '\t' '\r']	{ token lexbuf }
@@ -48,6 +49,16 @@ rule token = parse
 |	'%'			{MOD}
 |	'('			{LPAR}
 |	')'			{RPAR}
+|	"if"			{IF}
+|	"then"			{THEN}
+|	"end"			{END}
+|	"else"			{ELSE}
+|	"<"				{INF}
+|	">"				{SUP}
+|	"<="				{INFEQ}	
+|	">="				{SUPEQ}	
+|	"="				{EQ}
+|	"!="				{NEQ}
 |	','				{ COMMA }
 |	'['				{ LBRACKET }
 |	']'				{ RBRACKET }

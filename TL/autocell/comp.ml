@@ -33,6 +33,8 @@ let h = 3
 (** Variable containing 1! *)
 let one = 4
 
+let zero = 5
+
 (** Compute the position from the relative offset.
 	@param x	X offset.
 	@param y	Y offset.
@@ -76,6 +78,22 @@ let rec comp_expr e =
 		(v, [
 				SET (v,e)
 		])
+	|NEG(e)->
+		let (v, q)=comp_expr e in
+		(v, q @[
+				SUB(v, zero, v)
+		])
+	|BINOP(x,y,z)->
+		let(v)= new_reg() in
+		let(r,q)=comp_expr y in
+		let(s,t)=comp_expr z in
+		(v, q@ t@ [ match x with
+				|OP_ADD -> ADD(v,r,s)
+				|OP_SUB -> SUB(v,r,s)
+				|OP_MUL -> MUL(v,r,s)
+				|OP_DIV -> DIV(v,r,s)
+				|OP_MOD -> MOD(v,r,s)
+		])	
 	| _ ->
 		failwith "bad expression"
 
@@ -126,7 +144,7 @@ let compile flds stmt =
 	[
 		INVOKE(cSIZE, w, h);
 		SETI(one, 1);
-
+		SETI(zero, 0);
 		SETI(x, 0);
 		LABEL x_lab;
 
