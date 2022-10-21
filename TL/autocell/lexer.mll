@@ -26,7 +26,7 @@ let digit = ['0'-'9']
 let sign = ['+' '-']
 let dec = sign? digit+
 let char=['A'-'Z' 'a'-'z']
-let id=char (char digit '_')*
+let id=char (char |digit |'_')*
 
 
 rule token = parse
@@ -53,6 +53,7 @@ rule token = parse
 |	"then"			{THEN}
 |	"end"			{END}
 |	"else"			{ELSE}
+| 	"elsif"		{ELSIF}
 |	"<"				{INF}
 |	">"				{SUP}
 |	"<="				{INFEQ}	

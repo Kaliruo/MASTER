@@ -107,7 +107,18 @@ let rec comp_cond c l_then l_else =
 
 
 	match c with
-
+	| COMP(c,e1,e2)->
+		let(v, q) =comp_expr e1 in
+		let(u, r) =comp_expr e2 in
+		q@ r@ [match c with
+			COMP_EQ -> GOTO_EQ(l_then, v, u)
+			|COMP_NE -> GOTO_NE(l_then, v, u)
+			|COMP_GE -> GOTO_GE(l_then, v, u)
+			|COMP_LE -> GOTO_LE(l_then, v, u)
+			|COMP_GT -> GOTO_GT(l_then, v, u)
+			|COMP_LT -> GOTO_LT(l_then, v, u)
+			;GOTO(l_else)
+			]
 	| _ ->
 		failwith "bad condition"
 
@@ -124,13 +135,23 @@ let rec comp_stmt s =
 	| SET_CELL (f, e) ->
 		let (v, q) = comp_expr e in
 		q @ [
-			INVOKE (cSET, v, f)
+			INVOKE (cSET, v, 0)
 		]
 	|SET_VAR(v1,v2) ->
 		let(v,q)= comp_expr v2 in
 		q @ [
-			INVOKE (cSET, v1, v)
+			INVOKE (cSET, v, 0)
 		]
+	| IF_THEN(c, s1,s2) ->
+		let xthen= new_lab() in
+		let yelse = new_lab() in
+		let zend = new_lab() in
+		(comp_cond c xthen yelse) @
+		[LABEL xthen;] @ 
+		(comp_stmt s1) @
+		[GOTO zend; LABEL yelse;] @
+		(comp_stmt s2) @
+		[LABEL zend;]
 	| _ ->
 		failwith "bad instruction"
 
