@@ -1,7 +1,7 @@
 # Résolution d'une instance de sac a dos lue dans un fichier
 # Suppose que les commentaires commencent par #, que la capacité est sur la première ligne non commentée, et que les autres lignes décrivent les objets : 1 par ligne, d'abord une id puis le poids puis la valeur
 
-param fichier := "../../benchmarks/sac-a-dos/sac-a-dos-100.txt" ;
+param fichier := "sac-a-dos-100.txt" ;
 
 param capacite :=  read fichier as "1n" comment "#" use 1 ;
 do print "capacite : " , capacite ;

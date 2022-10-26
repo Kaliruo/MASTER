@@ -9,7 +9,7 @@ var x[Objets*Boite] binary;
 var y[Boite] binary;
 
 minimize y : sum<j> in Boite : y[j];
-subto allInBoite : forall<i> in Objets : sum<j> in Boite : x[i][j] =1;
-subto capaBoite : forall<j> in Boite : sum<i> in taille : taille[i]*x[i,j] <= capacite;
-subto oneInBoite : forall<j> in Boite : sum<i> in taille: x[i,j]>0 <= y[j];
+subto allInBoite : forall<i> in Objets : sum<j> in Boite : x[i,j] ==1;
+subto capaBoite : forall<j> in Boite : sum<i> in Objets : taille[i]*x[i,j] <= capacite;
+subto oneInBoite : forall<j> in Boite : forall<i> in Objets : x[i,j] <= y[j];
 # subto domain : forall<i> in Objets : 0 <= x[i] <= 1 ;
