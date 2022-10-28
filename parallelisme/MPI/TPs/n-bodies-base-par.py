@@ -144,6 +144,8 @@ for j in range(0, nbbodies) :
 		data[rank]=update(data[rank],force[rank]);
 		
 comm.gather(data,root=0)
+#faire split après gather
+#ou faire un reduce de avec somme pour concat list
 
 if rank==0 :
 	displayPlot(data)
