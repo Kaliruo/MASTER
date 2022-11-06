@@ -12,23 +12,26 @@ L1:
 	set r5, r18
 	invoke 5, 17, 2
 	set r6, r17
-	seti r15, #0
-	seti r16, #0
+	set r15, r5
+	set r16, r6
 	goto_eq L8, r15, r16
+	goto L9
 L8:
 	seti r14, #1
 	invoke 4, 14, 0
 	goto L10
 L9:
 L10:
-	seti r11, #0
-	seti r12, #0
+	set r11, r5
+	set r12, r6
 	add r10, r11, r12
 	seti r13, #2
 	goto_ne L2, r10, r13
+	goto L3
 L2:
 	invoke 5, 8, 3
 	invoke 5, 9, 5
+	goto_lt L5, r8, r9
 	goto L6
 L5:
 	seti r7, #2

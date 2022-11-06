@@ -117,8 +117,8 @@ let rec comp_cond c l_then l_else =
 			|COMP_LE -> GOTO_LE(l_then, v, u)
 			|COMP_GT -> GOTO_GT(l_then, v, u)
 			|COMP_LT -> GOTO_LT(l_then, v, u)
-			;GOTO(l_else)
 			]
+			@ [GOTO(l_else)]
 	| _ ->
 		failwith "bad condition"
 
@@ -140,7 +140,7 @@ let rec comp_stmt s =
 	|SET_VAR(v1,v2) ->
 		let(v,q)= comp_expr v2 in
 		q @ [
-			INVOKE (cSET, v, 0)
+			SET(v1, v)
 		]
 	| IF_THEN(c, s1,s2) ->
 		let xthen= new_lab() in
