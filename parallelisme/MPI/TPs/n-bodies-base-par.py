@@ -110,47 +110,47 @@ NBSTEPS = int(sys.argv[2])
 
 random.seed(0)   # à modifier si on veut que le monde créé soit différent à chaque fois
 
-
-
-plt.draw()
-plt.show(block=False)
-# une pause de 2 secondes, juste pour voir que ça s'affiche bien
-# on doit l'enlever dès que ça marche ;)
-plt.pause(2)
-
-# here to start the code...
-
 comm=MPI.COMM_WORLD
 size=comm.Get_size()
 rank=comm.Get_rank()
 
 
+comm.barrier()
+start=MPI.Wtime()
 
 
 if rank==0 :
-	data=init_world(nbbodies);
-
+	data=init_world(nbbodies)
+	dataS=split(data,size)
+	plt.draw()
+	plt.show(block=False)
 else : 
-	data=0
-force=[[0,0] for _ in range(nbbodies)]
+	data=None
+	dataS=None
 
-comm.scatter(data, root=0)
+dataLocal=comm.scatter(dataS, root=0)
+for t in range(0,NBSTEPS) :
+	force=[[0,0] for _ in range(len(dataLocal))]
+	dataTotal=comm.bcast(data,root=0)
+	for i in range(len(dataLocal)) :
+		for j in range (0,nbbodies) :
+			[fx,fy]=force[i]
+			[dfx,dfy] = interaction(dataLocal[i],dataTotal[j])
+			force[i] = [fx+dfx,fy+dfy]
+		dataLocal[i]=update(dataLocal[i],force[i])
+
+	dataFinal=comm.gather(dataLocal,root=0)
+	if rank==0 :
+		data=unsplit(dataFinal)
+		displayPlot(data)
 
 
-for j in range(0, nbbodies) :
-		[fx,fy]=force[rank]
-		[dfx,dfy] = interaction(data[rank],data[j])
-		force[rank] = [fx+dfx,fy+dfy]
-		data[rank]=update(data[rank],force[rank]);
-		
-comm.gather(data,root=0)
-#faire split après gather
-#ou faire un reduce de avec somme pour concat list
+end=MPI.Wtime()
+
 
 if rank==0 :
-	displayPlot(data)
-	
-print(signature(data))
+	print(signature(data))
+	print("In time :", end -start)
 
 	
 

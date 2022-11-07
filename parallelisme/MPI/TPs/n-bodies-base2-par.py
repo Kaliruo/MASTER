@@ -11,6 +11,7 @@ import random
 import matplotlib.pyplot as plt
 import time
 
+
 # split a vector "x" in "size" part. In case it does not divide well, the last one receives one less than others
 def split(x, size):
 	n = math.ceil(len(x) / size)
@@ -109,25 +110,49 @@ NBSTEPS = int(sys.argv[2])
 
 random.seed(0)   # à modifier si on veut que le monde créé soit différent à chaque fois
 
+comm=MPI.COMM_WORLD
+size=comm.Get_size()
+rank=comm.Get_rank()
 
 
-plt.draw()
-plt.show(block=False)
-# une pause de 2 secondes, juste pour voir que ça s'affiche bien
-# on doit l'enlever dès que ça marche ;)
-plt.pause(2)
-world= init_world(nbbodies)
-# here to start the code...
+comm.barrier()
+start=MPI.Wtime()
+
+
+if rank==0 :
+	data=init_world(nbbodies)
+	dataS=split(data,size)
+	plt.draw()
+	plt.show(block=False)
+else : 
+	data=None
+	dataS=None
+
+dataLocal=comm.scatter(dataS, root=0)
 for t in range(0,NBSTEPS) :
-	data=world
-	force=[[0,0] for _ in range(nbbodies)]
-	for i in range(0,nbbodies) :
-		for j in range (0,nbbodies) :
+	force=[[0,0] for _ in range(len(dataLocal))]
+	dataTotal=comm.bcast(data,root=0)
+	for i in range(0,len(dataLocal)) :
+		for j in range(i) :
 			[fx,fy]=force[i]
-			[dfx,dfy] = interaction(data[i],data[j])
-			force[i] = [fx+dfx,fy+dfy]
-	for i in range(0,nbbodies) :
-		data[i]=update(data[i],force[i])
-	displayPlot(data)
-print(signature(data))
+			[gx,gy]=force[j]
+			[xfji, yfji] = interaction(dataLocal[i],dataTotal[j])
+			force[i]=[fx+xfji, fy+yfji]
+			force[j]=[gx-xfji, gy-yfji]
+		dataLocal[i]=update(dataLocal[i],force[i])
+
+	dataFinal=comm.gather(dataLocal,root=0)
+	if rank==0 :
+		data=unsplit(dataFinal)
+		displayPlot(data)
+
+
+end=MPI.Wtime()
+
+
+if rank==0 :
+	print(signature(data))
+	print("In time :", end -start)
+
+	
 

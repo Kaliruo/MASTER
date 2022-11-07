@@ -116,10 +116,10 @@ plt.show(block=False)
 # une pause de 2 secondes, juste pour voir que ça s'affiche bien
 # on doit l'enlever dès que ça marche ;)
 plt.pause(2)
-
+world= init_world(nbbodies)
 # here to start the code...
 for t in range(0,NBSTEPS) :
-	data=init_world(nbbodies)
+	data=world
 	force=[[0,0] for _ in range(nbbodies)]
 	for i in range(0,nbbodies) :
 		for j in range (0,i) :
@@ -127,7 +127,7 @@ for t in range(0,NBSTEPS) :
 			[gx,gy]=force[j]
 			[xfji, yfji]= interaction(data[i],data[j])
 			force[i]=[fx+xfji, fy+yfji]
-			force[j]=[gx+xfji, gy+yfji]
+			force[j]=[gx-xfji, gy-yfji]
 
 	for i in range(0,nbbodies) :
 		data[i]=update(data[i],force[i])
