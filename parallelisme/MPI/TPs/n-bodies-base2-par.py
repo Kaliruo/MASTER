@@ -118,9 +118,9 @@ rank=comm.Get_rank()
 comm.barrier()
 start=MPI.Wtime()
 
-
+w=init_world(nbbodies)
 if rank==0 :
-	data=init_world(nbbodies)
+	data=w
 	dataS=split(data,size)
 	plt.draw()
 	plt.show(block=False)
@@ -128,19 +128,23 @@ else :
 	data=None
 	dataS=None
 
+n = math.ceil(len(w)/ size)
 dataLocal=comm.scatter(dataS, root=0)
+
 for t in range(0,NBSTEPS) :
-	force=[[0,0] for _ in range(len(dataLocal))]
+	force=[[0,0] for _ in range(nbbodies)]
 	dataTotal=comm.bcast(data,root=0)
-	for i in range(0,len(dataLocal)) :
-		for j in range(i) :
+	for i in range(0,n) :
+		for j in range(0,(rank*n)+i) :
 			[fx,fy]=force[i]
 			[gx,gy]=force[j]
 			[xfji, yfji] = interaction(dataLocal[i],dataTotal[j])
 			force[i]=[fx+xfji, fy+yfji]
 			force[j]=[gx-xfji, gy-yfji]
+	for i in range(0,n) :
 		dataLocal[i]=update(dataLocal[i],force[i])
-
+	for j in range(0,n) :
+		dataLocal[j]=update(dataLocal[j],force[j])
 	dataFinal=comm.gather(dataLocal,root=0)
 	if rank==0 :
 		data=unsplit(dataFinal)

@@ -130,13 +130,14 @@ else :
 
 dataLocal=comm.scatter(dataS, root=0)
 for t in range(0,NBSTEPS) :
-	force=[[0,0] for _ in range(len(dataLocal))]
+	force=[[0,0] for _ in range(nbbodies)]
 	dataTotal=comm.bcast(data,root=0)
 	for i in range(len(dataLocal)) :
 		for j in range (0,nbbodies) :
 			[fx,fy]=force[i]
 			[dfx,dfy] = interaction(dataLocal[i],dataTotal[j])
 			force[i] = [fx+dfx,fy+dfy]
+	for i in range(0,len(dataLocal)) :
 		dataLocal[i]=update(dataLocal[i],force[i])
 
 	dataFinal=comm.gather(dataLocal,root=0)
