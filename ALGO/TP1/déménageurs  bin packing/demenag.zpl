@@ -1,4 +1,4 @@
-param fichier := "u40_00.bpa" ;
+param fichier := "bin-packing-difficile-hard.bpa" ;
 
 param instance :=  read fichier as "1s" use 1 ;
 do print "instance : " , instance ;
