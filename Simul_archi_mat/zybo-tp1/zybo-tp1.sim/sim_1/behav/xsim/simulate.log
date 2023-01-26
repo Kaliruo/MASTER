@@ -1,0 +1,19 @@
+Time resolution is 1 ps
+Failure: FIN DE SIMULATION
+Time: 14 us  Iteration: 0  Process: /test_pulse_gen/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd
+$finish called at time : 14 us : File "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd" Line 87
+Failure: FIN DE SIMULATION
+Time: 14 us  Iteration: 0  Process: /test_pulse_gen/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd
+$finish called at time : 14 us : File "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd" Line 87
+Failure: FIN DE SIMULATION
+Time: 14 us  Iteration: 0  Process: /test_pulse_gen/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd
+$finish called at time : 14 us : File "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd" Line 87
+Failure: FIN DE SIMULATION
+Time: 28 us  Iteration: 0  Process: /test_pulse_gen/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd
+$finish called at time : 28 us : File "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd" Line 87
+Failure: FIN DE SIMULATION
+Time: 14 us  Iteration: 0  Process: /test_pulse_gen/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd
+$finish called at time : 14 us : File "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd" Line 87
+Failure: FIN DE SIMULATION
+Time: 14 us  Iteration: 0  Process: /test_pulse_gen/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd
+$finish called at time : 14 us : File "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd" Line 87
