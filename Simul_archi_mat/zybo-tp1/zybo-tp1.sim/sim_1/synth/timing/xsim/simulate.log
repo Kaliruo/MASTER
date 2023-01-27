@@ -1,0 +1,5 @@
+Time resolution is 1 ps
+Failure: SIMULATION TIMEOUT!!!
+Time: 2500 ms  Iteration: 0  Process: /test_pulse_gen/P_TIMEOUT  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd
+$finish called at time : 2500 ms : File "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd" Line 51
+INFO: xsimkernel Simulation Memory Usage: 112080 KB (Peak: 168756 KB), Simulation CPU Usage: 36390 ms

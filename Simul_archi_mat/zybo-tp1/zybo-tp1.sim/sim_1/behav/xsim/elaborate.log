@@ -12,6 +12,6 @@ Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
-Compiling architecture behaviour of entity xil_defaultlib.pulse_gen [\pulse_gen(max_cpt=10)\]
+Compiling architecture behaviour of entity xil_defaultlib.pulse_gen [pulse_gen_default]
 Compiling architecture behaviour of entity xil_defaultlib.test_pulse_gen
 Built simulation snapshot test_pulse_gen_behav
