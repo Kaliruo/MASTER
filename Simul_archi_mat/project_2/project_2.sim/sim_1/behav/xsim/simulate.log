@@ -1,0 +1,6 @@
+Time resolution is 1 ps
+ERROR: Array sizes do not match, left array has 8 elements, right array has 1 elements
+Time: 3 us  Iteration: 2  Process: /test_log2/line__70
+  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp4/test_log2.vhd
+
+HDL Line: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp4/cpu_package.0.vhd:104

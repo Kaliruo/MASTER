@@ -1,0 +1,121 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Fri Jan 27 09:56:53 2023
+# Process ID: 5309
+# Current directory: /home/lnc3770a/Cours/MASTER/Simul_archi_mat
+# Command line: vivado
+# Log file: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/vivado.log
+# Journal file: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/vivado.jou
+# Running On: pc-u3-305-08, OS: Linux, CPU Frequency: 800.182 MHz, CPU Physical cores: 8, Host memory: 16484 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source test_pulse_gen.tcl
+restart
+run 10 s
+restart
+run 10 us
+restart
+run 10 us
+run 10 us
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_simulation -mode post-synthesis -type timing
+source test_pulse_gen.tcl
+restart
+run 10 us
+run 10 us
+add_files -fileset utils_1 -norecurse /home/lnc3770a/Cours/MASTER/Simul_archi_mat/pulse_gen_synth.pre.tcl
+copy_run -name synth_1_copy_1 [get_runs synth_1] 
+set_property STEPS.SYNTH_DESIGN.TCL.PRE [ get_files /home/lnc3770a/Cours/MASTER/Simul_archi_mat/pulse_gen_synth.pre.tcl -of [get_fileset utils_1] ] [get_runs synth_1]
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_sim
+close_design
+launch_simulation -mode post-synthesis -type timing
+source test_pulse_gen.tcl
+restart
+run 10 ms
+restart
+run 10 s
+file mkdir /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1
+file mkdir /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new
+close [ open /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pluse_gen.xdc w ]
+add_files -fileset constrs_1 /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pluse_gen.xdc
+export_ip_user_files -of_objects  [get_files /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pluse_gen.xdc] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pluse_gen.xdc
+close [ open /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pulse_gen.xdc w ]
+add_files -fileset constrs_1 /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pulse_gen.xdc
+refresh_design
+close_sim
+launch_simulation -mode post-synthesis -type timing
+close_sim
+launch_simulation
+source test_pulse_gen.tcl
+restart
+run 10 s
+check_timing -verbose -name timing_1
+set_property target_constrs_file /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pulse_gen.xdc [current_fileset -constrset]
+reset_run synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_2
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+place_ports MCLK L16
+place_ports P M14
+place_ports RST R18
+set_property IOSTANDARD LVCMOS33 [get_ports [list RST]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list P]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list MCLK]]
+save_constraints -force
+set_property IOSTANDARD LVCMOS33 [get_ports [list MCLK]]
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+close_design
+launch_simulation -mode post-synthesis -type timing
+source test_pulse_gen.tcl
+restart
+run 10 s
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+current_sim simulation_4
+close_sim
+launch_simulation
+source test_pulse_gen.tcl
+restart
+run 10 s
+current_sim simulation_5
+close_sim
+close_design
+launch_simulation -mode post-synthesis -type timing
+source test_pulse_gen.tcl
+restart
+run 10 s
+update_compile_order -fileset sources_1
+reset_run synth_1
+close_sim
+close_sim
+close_design
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+reset_run synth_1

@@ -1,0 +1,923 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Fri Jan 27 09:56:53 2023
+# Process ID: 5309
+# Current directory: /home/lnc3770a/Cours/MASTER/Simul_archi_mat
+# Command line: vivado
+# Log file: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/vivado.log
+# Journal file: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/vivado.jou
+# Running On: pc-u3-305-08, OS: Linux, CPU Frequency: 800.182 MHz, CPU Physical cores: 8, Host memory: 16484 MB
+#-----------------------------------------------------------
+start_gui
+Sourcing tcl script '/nfs/xilinx/Vivado/2022.1/scripts/Vivado_init.tcl'
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:arty-a7-100:part0:1.0 available at /nfs/xilinx/vivado-boards/new/board_files/arty-a7-100/E.0/1.0/board.xml as part xc7a100tcsg324-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:arty-a7-100:part0:1.1 available at /nfs/xilinx/vivado-boards/new/board_files/arty-a7-100/E.0/1.1/board.xml as part xc7a100tcsg324-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:arty-a7-35:part0:1.0 available at /nfs/xilinx/vivado-boards/new/board_files/arty-a7-35/E.0/1.0/board.xml as part xc7a35ticsg324-1l specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:arty-a7-35:part0:1.1 available at /nfs/xilinx/vivado-boards/new/board_files/arty-a7-35/E.0/1.1/board.xml as part xc7a35ticsg324-1l specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:arty-s7-25:part0:1.1 available at /nfs/xilinx/vivado-boards/new/board_files/arty-s7-25/E.0/board.xml as part xc7s25csga324-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:arty-s7-50:part0:1.1 available at /nfs/xilinx/vivado-boards/new/board_files/arty-s7-50/B.0/board.xml as part xc7s50csga324-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:arty:part0:1.1 available at /nfs/xilinx/vivado-boards/new/board_files/arty/C.0/board.xml as part xc7a35ticsg324-1l specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:basys3:part0:1.2 available at /nfs/xilinx/vivado-boards/new/board_files/basys3/C.0/board.xml as part xc7a35tcpg236-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:cmod-s7-25:part0:1.0 available at /nfs/xilinx/vivado-boards/new/board_files/cmod-s7-25/B.0/board.xml as part xc7s25csga225-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:cmod_a7-15t:part0:1.2 available at /nfs/xilinx/vivado-boards/new/board_files/cmod_a7-15t/B.0/board.xml as part xc7a15tcpg236-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:cmod_a7-35t:part0:1.2 available at /nfs/xilinx/vivado-boards/new/board_files/cmod_a7-35t/B.0/board.xml as part xc7a35tcpg236-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /nfs/xilinx/vivado-boards/new/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_3eg:part0:1.0 available at /nfs/xilinx/vivado-boards/new/board_files/genesys-zu-3eg/B.0/board.xml as part xczu3eg-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_3eg:part0:1.1 available at /nfs/xilinx/vivado-boards/new/board_files/genesys-zu-3eg/D.0/board.xml as part xczu3eg-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_5ev:part0:1.1 available at /nfs/xilinx/vivado-boards/new/board_files/genesys-zu-5ev/C.0/board.xml as part xczu5ev-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:nexys-a7-100t:part0:1.0 available at /nfs/xilinx/vivado-boards/new/board_files/nexys-a7-100t/D.0/1.0/board.xml as part xc7a100tcsg324-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:nexys-a7-100t:part0:1.2 available at /nfs/xilinx/vivado-boards/new/board_files/nexys-a7-100t/D.0/1.2/board.xml as part xc7a100tcsg324-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:nexys-a7-50t:part0:1.0 available at /nfs/xilinx/vivado-boards/new/board_files/nexys-a7-50t/D.0/1.0/board.xml as part xc7a50ticsg324-1l specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:nexys-a7-50t:part0:1.2 available at /nfs/xilinx/vivado-boards/new/board_files/nexys-a7-50t/D.0/1.2/board.xml as part xc7a50ticsg324-1l specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:nexys4:part0:1.1 available at /nfs/xilinx/vivado-boards/new/board_files/nexys4/B.1/board.xml as part xc7a100tcsg324-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:nexys4_ddr:part0:1.1 available at /nfs/xilinx/vivado-boards/new/board_files/nexys4_ddr/C.1/board.xml as part xc7a100tcsg324-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:nexys_video:part0:1.1 available at /nfs/xilinx/vivado-boards/new/board_files/nexys_video/A.0/1.1/board.xml as part xc7a200tsbg484-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:nexys_video:part0:1.2 available at /nfs/xilinx/vivado-boards/new/board_files/nexys_video/A.0/1.2/board.xml as part xc7a200tsbg484-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at /nfs/xilinx/vivado-boards/new/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:usb104-a7:part0:1.0 available at /nfs/xilinx/vivado-boards/new/board_files/usb104-a7/B/1.0/board.xml as part xc7a100tcsg324-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:usb104-a7:part0:1.1 available at /nfs/xilinx/vivado-boards/new/board_files/usb104-a7/B/1.1/board.xml as part xc7a100tcsg324-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:usb104-a7:part0:1.2 available at /nfs/xilinx/vivado-boards/new/board_files/usb104-a7/B/1.2/board.xml as part xc7a100tcsg324-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:usb104-a7:part0:1.3 available at /nfs/xilinx/vivado-boards/new/board_files/usb104-a7/B/1.3/board.xml as part xc7a100tcsg324-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:ac701:part0:1.4 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/ac701/1.4/board.xml as part xc7a200tfbg676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.2 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.2/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.3 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.3/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.2 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.2/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.3 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.3/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kc705/1.6/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.4 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.4/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.5 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.5/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.2 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.2/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.3 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.3/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:sp701:part0:1.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/sp701/1.0/board.xml as part xc7s100fgga676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:sp701:part0:1.1 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/sp701/1.1/board.xml as part xc7s100fgga676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc707/1.4/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc709/1.8/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128:part0:1.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu128/production/1.0/board.xml as part xcvu37p-fsvh2892-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_mpsoc/1.0/board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_rfsoc/1.0/board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.4/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu104:part0:1.1 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu104/1.1/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.4 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.4/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.5 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.5/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.6 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.6/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.2/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.3/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.4/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1275/1.0/board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1285/1.0/board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/production/2.0/board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /nfs/xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+open_project /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.xpr
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/nfs/xilinx/vivado-library'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/nfs/xilinx/Vivado/2022.1/data/ip'.
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_pulse_gen'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/nfs/xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_pulse_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj test_pulse_gen_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'test_pulse_gen'
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot test_pulse_gen_behav xil_defaultlib.test_pulse_gen -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /nfs/xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot test_pulse_gen_behav xil_defaultlib.test_pulse_gen -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behaviour of entity xil_defaultlib.pulse_gen [pulse_gen_default]
+Compiling architecture behaviour of entity xil_defaultlib.test_pulse_gen
+Built simulation snapshot test_pulse_gen_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "test_pulse_gen_behav -key {Behavioral:sim_1:Functional:test_pulse_gen} -tclbatch {test_pulse_gen.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source test_pulse_gen.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'test_pulse_gen_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 7724.637 ; gain = 64.250 ; free physical = 10397 ; free virtual = 14894
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 s
+Failure: FIN DE SIMULATION
+Time: 1000004 us  Iteration: 0  Process: /test_pulse_gen/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd
+$finish called at time : 1000004 us : File "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd" Line 86
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+run 10 us
+launch_runs synth_1 -jobs 8
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Fri Jan 27 10:13:53 2023] Launched synth_1...
+Run output will be captured here: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:02 ; elapsed = 00:00:16 . Memory (MB): peak = 7748.016 ; gain = 0.234 ; free physical = 9166 ; free virtual = 14198
+reset_run synth_1
+INFO: [Project 1-1160] Copying file /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1/pulse_gen.dcp to /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/utils_1/imports/synth_1 and adding it to utils fileset
+reset_runs: Time (s): cpu = 00:00:00.71 ; elapsed = 00:00:09 . Memory (MB): peak = 7777.938 ; gain = 5.004 ; free physical = 8947 ; free virtual = 14179
+launch_runs synth_1 -jobs 8
+[Fri Jan 27 10:15:28 2023] Launched synth_1...
+Run output will be captured here: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1/runme.log
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/utils_1/imports/synth_1/pulse_gen.dcp with file /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1/pulse_gen.dcp
+reset_runs: Time (s): cpu = 00:00:00.58 ; elapsed = 00:00:06 . Memory (MB): peak = 7793.945 ; gain = 5.004 ; free physical = 8893 ; free virtual = 14214
+launch_runs synth_1 -jobs 8
+[Fri Jan 27 10:24:54 2023] Launched synth_1...
+Run output will be captured here: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1/runme.log
+launch_simulation -mode post-synthesis -type timing
+Command: launch_simulation  -mode post-synthesis -type timing
+INFO: [Vivado 12-12493] Simulation top is 'test_pulse_gen'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching post-synthesis timing simulation in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/nfs/xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-20] The target language is set to VHDL, it is not supported for simulation type 'timing', using Verilog instead.
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z020clg400-1
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 7813.965 ; gain = 0.000 ; free physical = 8529 ; free virtual = 13845
+INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 7869.988 ; gain = 0.000 ; free physical = 8426 ; free virtual = 13742
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 7907.004 ; gain = 93.043 ; free physical = 8267 ; free virtual = 13586
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode timesim -nolib -sdf_anno true -force -file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.v"
+INFO: [SIM-utils-27] Writing SDF file...
+INFO: [SIM-utils-28] write_sdf -mode timesim -process_corner slow -force -file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.sdf"
+INFO: [SIM-utils-36] Netlist generated:/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.v
+INFO: [SIM-utils-37] SDF generated:/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.sdf
+INFO: [SIM-utils-54] Inspecting design source files for 'test_pulse_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+xvlog --incr --relax -prj test_pulse_gen_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pulse_gen
+INFO: [VRFC 10-311] analyzing module glbl
+xvhdl --incr --relax -prj test_pulse_gen_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'test_pulse_gen'
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+xelab --incr --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot test_pulse_gen_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.test_pulse_gen xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /nfs/xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot test_pulse_gen_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.test_pulse_gen xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+INFO: [XSIM 43-3451] SDF backannotation process started with SDF file "test_pulse_gen_time_synth.sdf", for root module "test_pulse_gen/pgen0".
+INFO: [XSIM 43-3452] SDF backannotation was successful for SDF file "test_pulse_gen_time_synth.sdf", for root module "test_pulse_gen/pgen0".
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module simprims_ver.BUFG
+Compiling module simprims_ver.IBUF
+Compiling module simprims_ver.OBUF
+Compiling module simprims_ver.x_lut3_mux8
+Compiling module simprims_ver.LUT3(INIT=8'b01000000)
+Compiling module simprims_ver.LUT5(INIT=32'b111111111111111111...
+Compiling module simprims_ver.LUT6
+Compiling module simprims_ver.FDCE_default
+Compiling module simprims_ver.x_lut1_mux2
+Compiling module simprims_ver.LUT1
+Compiling module simprims_ver.LUT4
+Compiling module simprims_ver.CARRY4
+Compiling module xil_defaultlib.pulse_gen
+Compiling architecture behaviour of entity xil_defaultlib.test_pulse_gen
+Built simulation snapshot test_pulse_gen_time_synth
+execute_script: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 8049.145 ; gain = 0.000 ; free physical = 7888 ; free virtual = 13264
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "test_pulse_gen_time_synth -key {Post-Synthesis:sim_1:Timing:test_pulse_gen} -tclbatch {test_pulse_gen.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source test_pulse_gen.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'test_pulse_gen_time_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:32 ; elapsed = 00:00:31 . Memory (MB): peak = 8113.836 ; gain = 299.875 ; free physical = 7831 ; free virtual = 13210
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+run 10 us
+add_files -fileset utils_1 -norecurse /home/lnc3770a/Cours/MASTER/Simul_archi_mat/pulse_gen_synth.pre.tcl
+copy_run -name synth_1_copy_1 [get_runs synth_1] 
+synth_1_copy_1
+set_property STEPS.SYNTH_DESIGN.TCL.PRE [ get_files /home/lnc3770a/Cours/MASTER/Simul_archi_mat/pulse_gen_synth.pre.tcl -of [get_fileset utils_1] ] [get_runs synth_1]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/utils_1/imports/synth_1/pulse_gen.dcp with file /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1/pulse_gen.dcp
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1
+
+launch_runs synth_1 -jobs 8
+[Fri Jan 27 10:35:49 2023] Launched synth_1...
+Run output will be captured here: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1/runme.log
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_design
+launch_simulation -mode post-synthesis -type timing
+Command: launch_simulation  -mode post-synthesis -type timing
+INFO: [Vivado 12-12493] Simulation top is 'test_pulse_gen'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching post-synthesis timing simulation in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/nfs/xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-20] The target language is set to VHDL, it is not supported for simulation type 'timing', using Verilog instead.
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z020clg400-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8183.848 ; gain = 0.000 ; free physical = 5222 ; free virtual = 10632
+INFO: [Project 1-479] Netlist was created with Vivado 2022.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8183.848 ; gain = 0.000 ; free physical = 5151 ; free virtual = 10561
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode timesim -nolib -sdf_anno true -force -file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.v"
+INFO: [SIM-utils-27] Writing SDF file...
+INFO: [SIM-utils-28] write_sdf -mode timesim -process_corner slow -force -file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.sdf"
+INFO: [SIM-utils-36] Netlist generated:/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.v
+INFO: [SIM-utils-37] SDF generated:/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.sdf
+INFO: [SIM-utils-54] Inspecting design source files for 'test_pulse_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+xvlog --incr --relax -prj test_pulse_gen_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pulse_gen
+INFO: [VRFC 10-311] analyzing module glbl
+xvhdl --incr --relax -prj test_pulse_gen_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+xelab --incr --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot test_pulse_gen_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.test_pulse_gen xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /nfs/xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot test_pulse_gen_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.test_pulse_gen xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+INFO: [XSIM 43-3451] SDF backannotation process started with SDF file "test_pulse_gen_time_synth.sdf", for root module "test_pulse_gen/pgen0".
+INFO: [XSIM 43-3452] SDF backannotation was successful for SDF file "test_pulse_gen_time_synth.sdf", for root module "test_pulse_gen/pgen0".
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module simprims_ver.BUFG
+Compiling module simprims_ver.IBUF
+Compiling module simprims_ver.OBUF
+Compiling module simprims_ver.x_lut3_mux8
+Compiling module simprims_ver.LUT3
+Compiling module simprims_ver.FDCE_default
+Compiling module simprims_ver.x_lut1_mux2
+Compiling module simprims_ver.LUT1
+Compiling module simprims_ver.x_lut2_mux4
+Compiling module simprims_ver.LUT2(INIT=4'b0110)
+Compiling module xil_defaultlib.pulse_gen
+Compiling architecture behaviour of entity xil_defaultlib.test_pulse_gen
+Built simulation snapshot test_pulse_gen_time_synth
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "test_pulse_gen_time_synth -key {Post-Synthesis:sim_1:Timing:test_pulse_gen} -tclbatch {test_pulse_gen.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source test_pulse_gen.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'test_pulse_gen_time_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 8217.668 ; gain = 33.820 ; free physical = 5098 ; free virtual = 10509
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 ms
+Failure: FIN DE SIMULATION
+Time: 12 us  Iteration: 0  Process: /test_pulse_gen/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd
+$finish called at time : 12 us : File "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd" Line 86
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 s
+Failure: FIN DE SIMULATION
+Time: 12 us  Iteration: 0  Process: /test_pulse_gen/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd
+$finish called at time : 12 us : File "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd" Line 86
+file mkdir /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1
+file mkdir /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new
+close [ open /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pluse_gen.xdc w ]
+add_files -fileset constrs_1 /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pluse_gen.xdc
+export_ip_user_files -of_objects  [get_files /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pluse_gen.xdc] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pluse_gen.xdc
+close [ open /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pulse_gen.xdc w ]
+add_files -fileset constrs_1 /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pulse_gen.xdc
+refresh_design
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pulse_gen.xdc]
+Finished Parsing XDC File [/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pulse_gen.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation -mode post-synthesis -type timing
+Command: launch_simulation  -mode post-synthesis -type timing
+INFO: [Vivado 12-12493] Simulation top is 'test_pulse_gen'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching post-synthesis timing simulation in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/nfs/xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-20] The target language is set to VHDL, it is not supported for simulation type 'timing', using Verilog instead.
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode timesim -nolib -sdf_anno true -force -file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.v"
+INFO: [SIM-utils-27] Writing SDF file...
+INFO: [SIM-utils-28] write_sdf -mode timesim -process_corner slow -force -file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.sdf"
+INFO: [SIM-utils-36] Netlist generated:/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.v
+INFO: [SIM-utils-37] SDF generated:/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.sdf
+INFO: [SIM-utils-54] Inspecting design source files for 'test_pulse_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+xvlog --incr --relax -prj test_pulse_gen_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pulse_gen
+INFO: [VRFC 10-311] analyzing module glbl
+xvhdl --incr --relax -prj test_pulse_gen_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+xelab --incr --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot test_pulse_gen_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.test_pulse_gen xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /nfs/xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot test_pulse_gen_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.test_pulse_gen xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+INFO: [XSIM 43-3451] SDF backannotation process started with SDF file "test_pulse_gen_time_synth.sdf", for root module "test_pulse_gen/pgen0".
+INFO: [XSIM 43-3452] SDF backannotation was successful for SDF file "test_pulse_gen_time_synth.sdf", for root module "test_pulse_gen/pgen0".
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module simprims_ver.BUFG
+Compiling module simprims_ver.IBUF
+Compiling module simprims_ver.OBUF
+Compiling module simprims_ver.x_lut3_mux8
+Compiling module simprims_ver.LUT3
+Compiling module simprims_ver.FDCE_default
+Compiling module simprims_ver.x_lut1_mux2
+Compiling module simprims_ver.LUT1
+Compiling module simprims_ver.x_lut2_mux4
+Compiling module simprims_ver.LUT2(INIT=4'b0110)
+Compiling module xil_defaultlib.pulse_gen
+Compiling architecture behaviour of entity xil_defaultlib.test_pulse_gen
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+Built simulation snapshot test_pulse_gen_time_synth
+INFO: [Common 17-344] 'execute_script' was cancelled
+INFO: [Vivado 12-5357] 'elaborate' step aborted
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 8257.898 ; gain = 0.000 ; free physical = 5058 ; free virtual = 10461
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_pulse_gen'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/nfs/xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_pulse_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj test_pulse_gen_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/code/pulse_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'pulse_gen'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'test_pulse_gen'
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot test_pulse_gen_behav xil_defaultlib.test_pulse_gen -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /nfs/xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot test_pulse_gen_behav xil_defaultlib.test_pulse_gen -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behaviour of entity xil_defaultlib.pulse_gen [pulse_gen_default]
+Compiling architecture behaviour of entity xil_defaultlib.test_pulse_gen
+Built simulation snapshot test_pulse_gen_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "test_pulse_gen_behav -key {Behavioral:sim_1:Functional:test_pulse_gen} -tclbatch {test_pulse_gen.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source test_pulse_gen.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'test_pulse_gen_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 8257.898 ; gain = 0.000 ; free physical = 4949 ; free virtual = 10352
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 s
+Failure: FIN DE SIMULATION
+Time: 1000004 us  Iteration: 0  Process: /test_pulse_gen/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd
+$finish called at time : 1000004 us : File "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd" Line 86
+check_timing -verbose -name timing_1
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+set_property target_constrs_file /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pulse_gen.xdc [current_fileset -constrset]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/utils_1/imports/synth_1/pulse_gen.dcp with file /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1/pulse_gen.dcp
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1
+
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_2
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+launch_runs impl_1 -jobs 8
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Fri Jan 27 11:25:27 2023] Launched synth_1...
+Run output will be captured here: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1/runme.log
+[Fri Jan 27 11:25:27 2023] Launched impl_1...
+Run output will be captured here: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/impl_1/runme.log
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/utils_1/imports/synth_1/pulse_gen.dcp with file /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1/pulse_gen.dcp
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1
+
+launch_runs impl_1 -jobs 8
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Fri Jan 27 11:35:06 2023] Launched synth_1...
+Run output will be captured here: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1/runme.log
+[Fri Jan 27 11:35:06 2023] Launched impl_1...
+Run output will be captured here: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/impl_1/runme.log
+place_ports MCLK L16
+place_ports P M14
+place_ports RST R18
+set_property IOSTANDARD LVCMOS33 [get_ports [list RST]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list P]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list MCLK]]
+save_constraints -force
+set_property IOSTANDARD LVCMOS33 [get_ports [list MCLK]]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/utils_1/imports/synth_1/pulse_gen.dcp with file /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1/pulse_gen.dcp
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1
+
+launch_runs synth_1 -jobs 8
+[Fri Jan 27 11:46:33 2023] Launched synth_1...
+Run output will be captured here: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 8
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Fri Jan 27 11:47:50 2023] Launched impl_1...
+Run output will be captured here: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/impl_1/runme.log
+close_design
+launch_simulation -mode post-synthesis -type timing
+Command: launch_simulation  -mode post-synthesis -type timing
+INFO: [Vivado 12-12493] Simulation top is 'test_pulse_gen'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching post-synthesis timing simulation in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/nfs/xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-20] The target language is set to VHDL, it is not supported for simulation type 'timing', using Verilog instead.
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z020clg400-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8398.656 ; gain = 0.000 ; free physical = 4979 ; free virtual = 10164
+INFO: [Project 1-479] Netlist was created with Vivado 2022.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pulse_gen.xdc]
+Finished Parsing XDC File [/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pulse_gen.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8398.656 ; gain = 0.000 ; free physical = 4918 ; free virtual = 10103
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode timesim -nolib -sdf_anno true -force -file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.v"
+INFO: [SIM-utils-27] Writing SDF file...
+INFO: [SIM-utils-28] write_sdf -mode timesim -process_corner slow -force -file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.sdf"
+INFO: [SIM-utils-36] Netlist generated:/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.v
+INFO: [SIM-utils-37] SDF generated:/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.sdf
+INFO: [SIM-utils-54] Inspecting design source files for 'test_pulse_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+xvlog --incr --relax -prj test_pulse_gen_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pulse_gen
+INFO: [VRFC 10-311] analyzing module glbl
+xvhdl --incr --relax -prj test_pulse_gen_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+xelab --incr --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot test_pulse_gen_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.test_pulse_gen xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /nfs/xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot test_pulse_gen_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.test_pulse_gen xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+INFO: [XSIM 43-3451] SDF backannotation process started with SDF file "test_pulse_gen_time_synth.sdf", for root module "test_pulse_gen/pgen0".
+INFO: [XSIM 43-3452] SDF backannotation was successful for SDF file "test_pulse_gen_time_synth.sdf", for root module "test_pulse_gen/pgen0".
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module simprims_ver.BUFG
+Compiling module simprims_ver.IBUF
+Compiling module simprims_ver.OBUF
+Compiling module simprims_ver.x_lut1_mux2
+Compiling module simprims_ver.LUT1(INIT=2'b01)
+Compiling module simprims_ver.LUT4
+Compiling module simprims_ver.FDRE_default
+Compiling module simprims_ver.x_lut2_mux4
+Compiling module simprims_ver.LUT2(INIT=4'b0111)
+Compiling module simprims_ver.x_lut3_mux8
+Compiling module simprims_ver.LUT3(INIT=8'b01100000)
+Compiling module simprims_ver.LUT5
+Compiling module xil_defaultlib.pulse_gen
+Compiling architecture behaviour of entity xil_defaultlib.test_pulse_gen
+Built simulation snapshot test_pulse_gen_time_synth
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "test_pulse_gen_time_synth -key {Post-Synthesis:sim_1:Timing:test_pulse_gen} -tclbatch {test_pulse_gen.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source test_pulse_gen.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'test_pulse_gen_time_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:26 ; elapsed = 00:00:13 . Memory (MB): peak = 8398.656 ; gain = 0.000 ; free physical = 4848 ; free virtual = 10048
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 s
+Failure: SIMULATION TIMEOUT!!!
+Time: 2500 ms  Iteration: 0  Process: /test_pulse_gen/P_TIMEOUT  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd
+$finish called at time : 2500 ms : File "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd" Line 51
+run: Time (s): cpu = 00:01:03 ; elapsed = 00:00:36 . Memory (MB): peak = 8398.656 ; gain = 0.000 ; free physical = 4407 ; free virtual = 10017
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/utils_1/imports/synth_1/pulse_gen.dcp with file /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1/pulse_gen.dcp
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1
+
+launch_runs synth_1 -jobs 8
+[Fri Jan 27 11:57:05 2023] Launched synth_1...
+Run output will be captured here: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 8
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Fri Jan 27 11:58:05 2023] Launched impl_1...
+Run output will be captured here: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/impl_1/runme.log
+current_sim simulation_4
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_pulse_gen'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/nfs/xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_pulse_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj test_pulse_gen_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/code/pulse_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'pulse_gen'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'test_pulse_gen'
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot test_pulse_gen_behav xil_defaultlib.test_pulse_gen -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /nfs/xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot test_pulse_gen_behav xil_defaultlib.test_pulse_gen -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behaviour of entity xil_defaultlib.pulse_gen [pulse_gen_default]
+Compiling architecture behaviour of entity xil_defaultlib.test_pulse_gen
+Built simulation snapshot test_pulse_gen_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "test_pulse_gen_behav -key {Behavioral:sim_1:Functional:test_pulse_gen} -tclbatch {test_pulse_gen.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source test_pulse_gen.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'test_pulse_gen_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 8398.656 ; gain = 0.000 ; free physical = 4754 ; free virtual = 10007
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 s
+Failure: SIMULATION TIMEOUT!!!
+Time: 2500 ms  Iteration: 0  Process: /test_pulse_gen/P_TIMEOUT  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd
+$finish called at time : 2500 ms : File "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd" Line 51
+current_sim simulation_5
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 112080 KB (Peak: 168756 KB), Simulation CPU Usage: 36130 ms
+INFO: [Simtcl 6-16] Simulation closed
+close_design
+launch_simulation -mode post-synthesis -type timing
+Command: launch_simulation  -mode post-synthesis -type timing
+INFO: [Vivado 12-12493] Simulation top is 'test_pulse_gen'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching post-synthesis timing simulation in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/nfs/xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-20] The target language is set to VHDL, it is not supported for simulation type 'timing', using Verilog instead.
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z020clg400-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8398.656 ; gain = 0.000 ; free physical = 4786 ; free virtual = 10104
+INFO: [Project 1-479] Netlist was created with Vivado 2022.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pulse_gen.xdc]
+Finished Parsing XDC File [/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/constrs_1/new/pulse_gen.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8398.656 ; gain = 0.000 ; free physical = 4721 ; free virtual = 10038
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode timesim -nolib -sdf_anno true -force -file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.v"
+INFO: [SIM-utils-27] Writing SDF file...
+INFO: [SIM-utils-28] write_sdf -mode timesim -process_corner slow -force -file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.sdf"
+INFO: [SIM-utils-36] Netlist generated:/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.v
+INFO: [SIM-utils-37] SDF generated:/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.sdf
+INFO: [SIM-utils-54] Inspecting design source files for 'test_pulse_gen' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+xvlog --incr --relax -prj test_pulse_gen_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim/test_pulse_gen_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pulse_gen
+INFO: [VRFC 10-311] analyzing module glbl
+xvhdl --incr --relax -prj test_pulse_gen_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+xelab --incr --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot test_pulse_gen_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.test_pulse_gen xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /nfs/xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot test_pulse_gen_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.test_pulse_gen xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+INFO: [XSIM 43-3451] SDF backannotation process started with SDF file "test_pulse_gen_time_synth.sdf", for root module "test_pulse_gen/pgen0".
+INFO: [XSIM 43-3452] SDF backannotation was successful for SDF file "test_pulse_gen_time_synth.sdf", for root module "test_pulse_gen/pgen0".
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module simprims_ver.BUFG
+Compiling module simprims_ver.IBUF
+Compiling module simprims_ver.OBUF
+Compiling module simprims_ver.x_lut1_mux2
+Compiling module simprims_ver.LUT1(INIT=2'b01)
+Compiling module simprims_ver.LUT4
+Compiling module simprims_ver.FDRE_default
+Compiling module simprims_ver.x_lut2_mux4
+Compiling module simprims_ver.LUT2(INIT=4'b0111)
+Compiling module simprims_ver.x_lut3_mux8
+Compiling module simprims_ver.LUT3(INIT=8'b01100000)
+Compiling module simprims_ver.LUT5
+Compiling module xil_defaultlib.pulse_gen
+Compiling architecture behaviour of entity xil_defaultlib.test_pulse_gen
+Built simulation snapshot test_pulse_gen_time_synth
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.sim/sim_1/synth/timing/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "test_pulse_gen_time_synth -key {Post-Synthesis:sim_1:Timing:test_pulse_gen} -tclbatch {test_pulse_gen.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source test_pulse_gen.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'test_pulse_gen_time_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 8398.656 ; gain = 0.000 ; free physical = 4699 ; free virtual = 9999
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 s
+Failure: SIMULATION TIMEOUT!!!
+Time: 2500 ms  Iteration: 0  Process: /test_pulse_gen/P_TIMEOUT  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd
+$finish called at time : 2500 ms : File "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/test/test_pulse_gen.vhd" Line 51
+run: Time (s): cpu = 00:00:56 ; elapsed = 00:00:36 . Memory (MB): peak = 8398.656 ; gain = 0.000 ; free physical = 4644 ; free virtual = 10015
+update_compile_order -fileset sources_1
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.srcs/utils_1/imports/synth_1/pulse_gen.dcp with file /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1/pulse_gen.dcp
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1
+
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 112080 KB (Peak: 168756 KB), Simulation CPU Usage: 36390 ms
+INFO: [Simtcl 6-16] Simulation closed
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_design
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 8
+[Fri Jan 27 12:05:16 2023] Launched synth_1...
+Run output will be captured here: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/zybo-tp1/zybo-tp1.runs/synth_1/runme.log
+reset_run synth_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Jan 27 12:05:26 2023...
