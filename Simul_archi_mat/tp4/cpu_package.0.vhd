@@ -87,7 +87,6 @@ end log2;
 -- Synthesisable log2 function
 -- Note: we suppose input and output vectors featuring the same shape
 function log2( vI: in std_logic_vector ) return std_logic_vector is
-    variable intTmp : integer :=0;
 begin
   -- synthesis translate_off
   if is_X( vI ) then
@@ -96,14 +95,14 @@ begin
   -- synthesis translate_on
 
   if vI=conv_std_logic_vector(0,vI'length) or vI=conv_std_logic_vector(1,vI'length) then
-    return conv_std_logic_vector(0,vI'length); --return conv_std_logic_vector(0,log2(BUS_WIDTH)+1);
+    return conv_std_logic_vector(0,vI'length);
   end if;
-  for i in vI'range loop 
+  for i in vI'high downto vI'low loop 
       if vI(i) ='1' then
         if vI(i-1 downto 0)=conv_std_logic_vector(0,i) then 
-            return conv_std_logic_vector(0,i);
+            return conv_std_logic_vector(i,vI'length);
         else 
-            return conv_std_logic_vector(0,i+1);
+            return conv_std_logic_vector(i+1,vI'length);
         end if;
       end if;
   end loop;

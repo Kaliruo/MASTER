@@ -25,7 +25,7 @@ entity log2_hw is
 	-- I/O
 	port (
 		DIN : in std_logic_vector(BUS_WIDTH-1 downto 0);
-        DOUT : out std_logic_vector(BUS_WIDTH-1 downto 0)
+        DOUT : out std_logic_vector(log2(BUS_WIDTH) downto 0)
     );
 
 end log2_hw;
@@ -33,25 +33,31 @@ end log2_hw;
 -- architecture definition
 architecture behaviour of log2_hw is
 
+    function mylog2( vI: in std_logic_vector ) return std_logic_vector is
+    begin
+      -- synthesis translate_off
+      --if is_X( vI ) then
+      --  return conv_std_logic_vector(0,log2(BUS_WIDTH)+1);
+      --end if;
+      -- synthesis translate_on
+    
+      if vI=conv_std_logic_vector(0,vI'length) or vI=conv_std_logic_vector(1,vI'length) then
+        return conv_std_logic_vector(0,log2(BUS_WIDTH)+1); --return conv_std_logic_vector(0,log2(BUS_WIDTH)+1);
+      end if;
+      for i in vI'range loop 
+          if vI(i) ='1' then
+            if vI(i-1 downto 0)=conv_std_logic_vector(0,vI'length) then 
+                return conv_std_logic_vector(0,log2(BUS_WIDTH)+1);
+            else 
+                return conv_std_logic_vector(i+1,log2(BUS_WIDTH)+1);
+            end if;
+          end if;
+      end loop;
+      -- default
+      return conv_std_logic_vector(0,log2(BUS_WIDTH)+1);
+    end mylog2; 
+
 begin
-________
-________
-________
-________
-________
-________
-________
-________
-________
-________
-________
-________
-________
-________
-________
-________
-________
-________
-________
+DOUT <= mylog2(DIN);
 
 end behaviour;
