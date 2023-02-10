@@ -1,0 +1,67 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Fri Feb  3 10:03:12 2023
+# Process ID: 1183592
+# Current directory: /home/lnc3770a/Cours/MASTER/Simul_archi_mat
+# Command line: vivado
+# Log file: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/vivado.log
+# Journal file: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/vivado.jou
+# Running On: pc-u3-305-09, OS: Linux, CPU Frequency: 3725.536 MHz, CPU Physical cores: 8, Host memory: 16483 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_2/project_2.xpr
+update_compile_order -fileset sources_1
+update_files -from_files /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp4/log2_hw.vhd -to_files /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp4/cpu_package.0.vhd -filesets [get_filesets *]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+source test_log2.tcl
+update_files -from_files /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp4/cpu_package.0.vhd -to_files /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp4/log2_hw.vhd -filesets [get_filesets *]
+close_sim
+launch_simulation
+source test_log2.tcl
+close_sim
+launch_simulation
+source test_log2.tcl
+restart
+run 10 s
+close_sim
+launch_simulation
+source test_log2.tcl
+close_sim
+launch_simulation
+source test_log2.tcl
+close_sim
+launch_simulation
+source test_log2.tcl
+close_sim
+launch_simulation
+source test_log2.tcl
+restart
+run 10 s
+run 10 s
+close_sim
+launch_simulation
+source test_log2.tcl
+close_sim
+launch_simulation
+source test_log2.tcl
+add_files -norecurse /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp4/log2_hw.vhd
+close_sim
+launch_simulation
+source test_log2.tcl
+close_sim
+launch_simulation
+source test_log2.tcl
+close_sim
+launch_simulation
+source test_log2.tcl
+close_sim
+launch_simulation
+source test_log2.tcl
+close_sim
+launch_simulation
+source test_log2.tcl
+restart

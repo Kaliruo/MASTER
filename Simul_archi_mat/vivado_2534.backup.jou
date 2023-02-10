@@ -1,0 +1,74 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Fri Feb 10 10:02:30 2023
+# Process ID: 2534
+# Current directory: /home/lnc3770a/Cours/MASTER/Simul_archi_mat
+# Command line: vivado
+# Log file: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/vivado.log
+# Journal file: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/vivado.jou
+# Running On: pc-u3-305-09, OS: Linux, CPU Frequency: 4139.243 MHz, CPU Physical cores: 8, Host memory: 16483 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_3_tp5/project_3_tp5.xpr
+update_compile_order -fileset sources_1
+add_files -fileset utils_1 -norecurse /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp5.pre.tcl
+set_property STEPS.SYNTH_DESIGN.TCL.PRE [ get_files /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp5.pre.tcl -of [get_fileset utils_1] ] [get_runs synth_1]
+file mkdir /home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_3_tp5/project_3_tp5.srcs/constrs_1
+file mkdir /home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_3_tp5/project_3_tp5.srcs/constrs_1/new
+close [ open /home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_3_tp5/project_3_tp5.srcs/constrs_1/new/tp5.xdc w ]
+add_files -fileset constrs_1 /home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_3_tp5/project_3_tp5.srcs/constrs_1/new/tp5.xdc
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+set_property target_constrs_file /home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_3_tp5/project_3_tp5.srcs/constrs_1/new/tp5.xdc [current_fileset -constrset]
+refresh_design
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_2
+launch_simulation
+source test_registres.tcl
+close_sim
+refresh_design
+refresh_design
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+close_design
+open_run synth_1 -name synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_2
+refresh_design
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+close_design
+close_project
+create_project project_TP6 /home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_TP6 -part xc7z010iclg225-1L
+set_property  ip_repo_paths  /nfs/xilinx/vivado-library [current_project]
+update_ip_catalog
+set_property target_language VHDL [current_project]
+close_project
+open_project /home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_3_tp5/project_3_tp5.xpr
+close_project
+open_project /home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_TP6/project_TP6.xpr
+close_project
+create_project TP6 /home/lnc3770a/Cours/MASTER/Simul_archi_mat/TP6 -part xc7z020clg400-1
+set_property board_part digilentinc.com:zybo-z7-20:part0:1.1 [current_project]
+set_property  ip_repo_paths  /nfs/xilinx/vivado-library [current_project]
+update_ip_catalog
+set_property target_language VHDL [current_project]
+add_files -norecurse /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp6/memory.3.vhd
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp6/test_memory.3.vhd
+add_files -norecurse /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp6/cpu_package.0.vhd
+add_files -norecurse /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp6/rom_file.0.txt
+set_property top sim [get_filesets sim_1]

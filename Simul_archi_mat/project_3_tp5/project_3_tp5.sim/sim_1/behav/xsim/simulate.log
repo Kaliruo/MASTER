@@ -1,0 +1,4 @@
+Time resolution is 1 ps
+Failure: FIN DE SIMULATION
+Time: 92500 ps  Iteration: 0  Process: /test_registres/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp5/test_registres.0.vhd
+$finish called at time : 92500 ps : File "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp5/test_registres.0.vhd" Line 169

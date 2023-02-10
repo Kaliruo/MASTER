@@ -1,0 +1,47 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Thu Feb  9 15:42:50 2023
+# Process ID: 291257
+# Current directory: /home/lnc3770a/Cours/MASTER/Simul_archi_mat
+# Command line: vivado
+# Log file: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/vivado.log
+# Journal file: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/vivado.jou
+# Running On: pc-u3-305-17, OS: Linux, CPU Frequency: 3876.704 MHz, CPU Physical cores: 8, Host memory: 16484 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_3_tp5/project_3_tp5.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+update_compile_order -fileset sources_1
+launch_simulation
+source test_registres.tcl
+restart
+run 10 s
+restart
+run 10 s
+restart
+run 10 s
+add_files -norecurse /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp5/registres.1.vhd
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp5/registres.0.vhd] -no_script -reset -force -quiet
+remove_files  /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp5/registres.0.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+source test_registres.tcl
+restart
+run 10 s
+restart
+run 10 s
+close_sim
