@@ -65,9 +65,9 @@ begin
 
 ---------------------------------
 -- test si acces simultanes
-D2QA <= (W='0' and ADR_A=ADR_W);
+D2QA <= (W='1' and ADR_A=ADR_W);
             
-D2QB <= (W='0' and ADR_B=ADR_W); 
+D2QB <= (W='1' and ADR_B=ADR_W); 
 
 -------------------
 -- Process P_ReadQA
