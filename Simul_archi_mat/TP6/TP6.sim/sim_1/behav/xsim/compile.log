@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp6/memory.3.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'memory'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp6/test_memory.3.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'test_memory'

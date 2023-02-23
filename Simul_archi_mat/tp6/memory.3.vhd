@@ -114,20 +114,39 @@ begin
 P_ACCESS: process(CLK)
 begin
     if rising_edge(CLK) then 
-        if (RST='0') then
-            REGS <= (others => CONV_STD_LOGIC_VECTOR(0, DBUS_WIDTH));
+        --DO <= (others => 'Z');
+        if (EN='0') then--if (RST='0') then
+            --REGS <= (others => CONV_STD_LOGIC_VECTOR(0, DBUS_WIDTH));
+            DO <= (others => 'Z');
         elsif (EN='1') then
             if (WEN='0') then
                 DO <= REGS(CONV_INTEGER(ADR));
             else 
                 REGS(CONV_INTEGER(ADR)) <= DI;
             end if;
-        else 
-            DO <= (others => 'Z');         
         end if;
-     end if;    
-                
+    end if;
+                 
 end process P_ACCESS;
 
 end behavior;
 
+--test front actif horloge
+--if rising_edge(CLK) then
+  --  if (RST = '0') then 
+    --    REGS <= LOAD_FILE(STRING'(FILENAME)');
+    -- test si acces valide
+   -- elsif (EN='1') then
+     --   if (WEN='1') then
+       --     REGS(CONV_INTEGER(ADR)) <= DI;
+         --   DO<=DI; -- implement WRITE_FIRST policy
+       -- else 
+         --   DO <= REGS(CONV_INTEGER(ADR));
+       -- end if;
+        --setting 'Z' output will prevent from BRAM instanciation    
+        --else
+        --              high impedance
+        --          DO <= (others => 'Z');
+--        end if;    
+  --  end if;
+--end if;

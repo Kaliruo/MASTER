@@ -62,20 +62,43 @@ begin
 ------------------------------------------------------------------
 -- Mise a jour des sorties dans le domaine concourant
 
+P_RACCESS : process(CLK) 
+begin 
+    if rising_edge(CLK) then 
+       
+        if REN = '1' then 
+            DO <= (others =>'Z');            
+        elsif REN ='0' and EMPTY = '0' then 
+            DO <= REGS(CONV_INTEGER(R_ADR));                        
+        end if;        
+    end if; 
+
+end process P_RACCESS;
+ 
+P_WACCESS : process(CLK) 
+begin 
+    if rising_edge(CLK) then
+        if WEN ='0' and FULL = '0'then 
+            REGS(CONV_INTEGER(W_ADR)) <= DI;
+        end if; 
+    end if;
+                
+end process P_WACCESS;
+         
+
 ----------------------------------------------------------------------------
 -- Process P_WRITE effectue l'ecriture de la donnee dans la file ainsi que
 --		la mise a jour du pointeur d'adresse ecriture.
 --		Le pointeur pointe toujours sur l'emplacement de la prochaine ecriture.
-P_WRITE:	process(CLK)
+P_WRITE: process(CLK)
 begin
 	if rising_edge(CLK) then
 		-- test du RST
 		if RST='0' then
-			________
-			________
-			________
-			________
-		end if;
+			W_ADR <= (others => '0');
+		elsif WEN = '0' then
+		  W_ADR <= W_ADR + '1';
+	    end if;
 	end if;
 end process P_WRITE;
 
@@ -88,18 +111,9 @@ begin
 	if rising_edge(CLK) then
 		-- test du RST
 		if RST='0' then
-			________
-			________
-			________
-			________
-			________
-			________
-			________
-			________
-			________
-			________
-			________
-			________
+			R_ADR <= (others => '0');
+		elsif REN = '0' then
+		  R_ADR <= R_ADR + '1';
 		end if;
 	end if;
 end process P_READ;
@@ -113,15 +127,14 @@ begin
 	if rising_edge(CLK) then
 		-- test du RST
 		if RST='0' then
-			________
-			________
-			________
-			________
-			________
-			________
-			________
-			________
-		end if;
+		    EMPTY <= '1';
+        else next_R := R_adr+1;
+            if WEN= '0' and next_R = W_ADR then 
+                EMPTY <= '1';
+            else 
+                EMPTY <='0';                 
+            end if;  
+        end if;
 	end if;
 end process P_EMPTY;
 
@@ -134,15 +147,15 @@ begin
 	if rising_edge(CLK) then
 		-- test du RST
 		if RST='0' then
-			________
-			________
-			________
-			________
-			________
-			________
-			________
-			________
-		end if;
+		  FULL <= '0';
+        elsif WEN ='1' then
+            next_W := W_adr+'1';
+            if REN= '0' and next_W = R_ADR  then                        
+                FULL <= '1';
+            else 
+                FULL <='0';                          
+            end if;
+        end if;
 	end if;
 end process P_FULL;
 
@@ -150,27 +163,20 @@ end process P_FULL;
 -- Process P_MID indique l'etat au moins a moitie plein de la FIFO
 --		'1' FIFO au moins a moitie pleine '0' sinon, cette information
 --		 etant mise a jour sur front montant d'horloge
-P_MID:	process(CLK)
-	variable temp_W : std_logic_vector (ABUS_WIDTH-1 downto 0);
-begin
-	if rising_edge(CLK) then
-		-- test du RST
-		if RST='0' then
-			________
-			________
-			________
-			________
-			________
-			________
-			________
-			________
-			________
-			________
-			________
-			________
-		end if;
-	end if;
-end process P_MID;
+--P_MID:	process(CLK)
+--	variable temp_W : std_logic_vector (ABUS_WIDTH-1 downto 0);
+--begin
+--	if rising_edge(CLK) then
+--		-- test du RST
+--		if RST='0' then
+--			MID <= '0';
+--		elsif WEN ='1' then
+--            temp_W := W_adr+'1';
+--            if REN= '0' then
+			
+--		end if;
+--	end if;
+--end process P_MID;
 
 end behavior;
 

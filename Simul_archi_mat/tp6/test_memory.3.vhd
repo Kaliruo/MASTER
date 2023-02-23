@@ -79,9 +79,9 @@ end process P_TIMEOUT;
 
 ------------------------------------------------------------------
 -- instanciation et mapping de composants
-L1 : entity work.memory(behavior)   -- behavioral simulation
-		generic map (S_DATA,S_L1,FILENAME)
---L1 : entity work.memory(structure)  -- post-synthesis functional simulation
+--L1 : entity work.memory(behavior)   -- behavioral simulation
+		--generic map (S_DATA,S_L1,FILENAME)
+L1 : entity work.memory(behavior)  -- post-synthesis functional simulation
 		port map (RST => E_RST, CLK => E_CLK, WEN => E_WEN,
 					 EN => E_EN, ADR => E_ADR,
 					 DI => E_DI, DO => E_DO );

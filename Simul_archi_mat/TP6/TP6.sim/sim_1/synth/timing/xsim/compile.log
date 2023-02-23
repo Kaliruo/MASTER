@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/TP6/TP6.sim/sim_1/synth/timing/xsim/test_memory_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp6/cpu_package.0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp6/test_memory.3.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'test_memory'

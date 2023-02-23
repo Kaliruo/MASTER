@@ -1,0 +1,6 @@
+Time resolution is 1 ps
+Error: Memory 0 BAD VALUE
+Time: 62500 ps  Iteration: 0  Process: /test_memory/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp6/test_memory.3.vhd
+Failure: FIN DE SIMULATION
+Time: 72500 ps  Iteration: 0  Process: /test_memory/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp6/test_memory.3.vhd
+$finish called at time : 72500 ps : File "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp6/test_memory.3.vhd" Line 147
