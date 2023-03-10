@@ -2,13 +2,13 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Fri Mar 10 11:29:23 2023
-# Process ID: 20149
+# Start of session at: Fri Mar 10 10:17:37 2023
+# Process ID: 2474
 # Current directory: /home/lnc3770a/Cours/MASTER/Simul_archi_mat
 # Command line: vivado
 # Log file: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/vivado.log
 # Journal file: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/vivado.jou
-# Running On: pc-u3-305-11, OS: Linux, CPU Frequency: 800.291 MHz, CPU Physical cores: 8, Host memory: 16484 MB
+# Running On: pc-u3-305-11, OS: Linux, CPU Frequency: 800.179 MHz, CPU Physical cores: 8, Host memory: 16484 MB
 #-----------------------------------------------------------
 start_gui
 open_project /home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_tp7/project_tp7.xpr
@@ -17,24 +17,6 @@ launch_simulation
 source test_fifo.tcl
 restart
 run 10 s
-close_sim
-launch_simulation
-source test_fifo.tcl
-restart
-run 10 s
-close_sim
-launch_simulation
-source test_fifo.tcl
-restart
-run 10 s
-close_sim
-launch_simulation
-source test_fifo.tcl
-restart
-run 10 s
-close_sim
-launch_simulation
-source test_fifo.tcl
 restart
 run 10 s
 close_sim
@@ -57,10 +39,15 @@ run 10 s
 close_sim
 launch_simulation
 source test_fifo.tcl
+close_sim
+launch_simulation
+source test_fifo.tcl
 restart
 run 10 s
 close_sim
 launch_simulation
+source test_fifo.tcl
+close_sim
 launch_simulation
 source test_fifo.tcl
 restart
