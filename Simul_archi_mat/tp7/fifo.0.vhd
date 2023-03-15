@@ -66,25 +66,6 @@ begin
 
 P_ACCESS : process (CLK)
 begin
---    if rising_edge(CLK) then
---        if REN = '1' then 
---            DO <= (others =>'Z');            
---        elsif REN ='0' and EMPTY = '0' then 
---           DO <= REGS(CONV_INTEGER(R_ADR));
---        end if; 
---        if WEN ='0' and FULL = '0'then 
---            REGS(CONV_INTEGER(W_ADR)) <= DI;  
---        end if;      
---        if REN='0' and WEN ='0' and EMPTY='1' then
---            DO <= (others => '0');
---            REGS(CONV_INTEGER(R_ADR)) <= DI;
---        elsif FULL= '1' and WEN ='0' and REN ='0' then
---            DO <= REGS(CONV_INTEGER(R_ADR));
---            REGS(CONV_INTEGER(W_ADR)) <= DI;
-        
---        end if;
---    end if;           
-     
 if rising_edge(CLK) then
         if REN = '1' then
             DO<=(others => 'Z');
@@ -108,31 +89,6 @@ if rising_edge(CLK) then
     
 end process P_ACCESS;
 
-
-
-
---P_RACCESS : process(CLK) 
---begin 
---    if rising_edge(CLK) then 
-       
---        if REN = '1' then 
---            DO <= (others =>'Z');            
---        elsif REN ='0' and EMPTY = '0' then 
---            DO <= REGS(CONV_INTEGER(R_ADR));                        
---        end if;        
---    end if; 
-
---end process P_RACCESS;
- 
---P_WACCESS : process(CLK) 
---begin 
---    if rising_edge(CLK) then
---        if WEN ='0' and FULL = '0'then 
---            REGS(CONV_INTEGER(W_ADR)) <= DI;
---        end if; 
---    end if;
-                
---end process P_WACCESS;
          
 
 ----------------------------------------------------------------------------
@@ -172,62 +128,12 @@ begin
 	end if;
 end process P_READ;
 
---if rising_edge(CLK) then
---		-- test du RST
---		if RST='0' then
---			R_ADR <= (others =>'0');	
---		elsif (REN = '0' and EMPTY /= '1') or ( FULL = '1' and WEN = '0') then 
---		      R_ADR <= R_ADR + '1';
---	    end if;
---	    if (REN = '0' and WEN = '0' and EMPTY = '1' ) then
---	       R_ADR <= (others =>'0');
---	    end if;
---	end if;
-
---end process P_READ;
---P_READ:	process(CLK)
---begin
---	if rising_edge(CLK) then
---		-- test du RST
---        if RST = '0' then 
---            DO <= (others =>'Z');   
---            R_ADR <= (others => '0');         
---        elsif (REN ='0' and EMPTY = '0')  or ( WEN ='0' and FULL = '1' ) then 
---		    R_ADR <= R_ADR + '1';
---		end if;
---		DO <= (others =>'Z'); 
---		if REN ='0' and EMPTY = '0' then
---		    DO <= REGS(CONV_INTEGER(R_ADR));
---		end if;
---	end if;
---end process P_READ;
 -------------------------------------------------------------------------
 -- Process P_EMPTY indique '1' la FIFO est vide '0' sinon, cette information
 --		 etant mise a jour sur front montant d'horloge
 P_EMPTY:	process(CLK)
 	variable next_R : std_logic_vector (ABUS_WIDTH-1 downto 0);
 begin
---	if rising_edge(CLK) then
---		-- test du RST
---		if RST='0' then
---		    EMPTY <= '1';
---        elsif REN = '0' then 
---                next_R := R_adr+1;
---            if WEN= '0' and next_R = W_ADR then 
---                EMPTY <= '1';
---            else 
---                EMPTY <='0';                 
---            end if;  
---        else 
---            if WEN = '0' and R_ADR = W_ADR then
---                EMPTY <= '1';
---            else
---                EMPTY <= '0';
---           end if;
---       end if;
---	end if;
---end process P_EMPTY;
-
 	if rising_edge(CLK) then
 		-- test du RST
 		next_R := R_adr+1;
@@ -253,20 +159,6 @@ end process P_EMPTY;
 P_FULL:	process(CLK)
 	variable next_W : std_logic_vector (ABUS_WIDTH-1 downto 0);
 begin
---	if rising_edge(CLK) then
---		-- test du RST
---		if RST='0' then
---		  FULL <= '0';
---        elsif WEN ='0' then
---            next_W := W_adr+'1';
---            if REN= '0' and next_W = R_ADR  then                        
---                FULL <= '1';
---            else 
---                FULL <='0';                          
---            end if;
---        end if;
---	end if;
---end process P_FULL;
 
 if rising_edge(CLK) then
 		-- test du RST
@@ -290,24 +182,44 @@ end process P_FULL;
 --		'1' FIFO au moins a moitie pleine '0' sinon, cette information
 --		 etant mise a jour sur front montant d'horloge
 P_MID:	process(CLK)
-	variable temp_W : std_logic_vector (ABUS_WIDTH-1 downto 0);
+	--variable temp_W : std_logic_vector (ABUS_WIDTH-1 downto 0);
+	variable temp_W : integer;
+    variable temp_R : integer;
 begin
-	if rising_edge(CLK) then
-		-- test du RST
-		if RST='0' then
-			MID <= '0';
-		elsif WEN ='0' and REN ='1' and MID = '0' then
-		    temp_W := W_ADR 
-		      if 
-            --verifier si > 50 %
-            -- si oui MID = '1'
-            -- sinon MID = '0'
-        elsif WEN ='1' and REN ='0' and MID = '0' then
-            if ...
-        
-			
-		end if;
-	end if;
+    if rising_edge(CLK) then
+        if WEN = '1' then
+           temp_W := CONV_INTEGER(W_ADR);
+        end if;
+        if WEN = '0' then
+           temp_W := CONV_INTEGER(W_ADR)+1;
+        end if;
+        if REN = '1' then 
+           temp_R := CONV_INTEGER(R_ADR);
+        end if;
+        if REN = '0' then
+           temp_R := CONV_INTEGER(R_ADR)+1;
+        end if;
+        -- test du RST
+        if RST='0' then
+          MID <= '0';
+        elsif EMPTY = '1' then
+            MID <= '0';
+        elsif FULL = '1' then
+            MID <= '1';
+          elsif temp_W > temp_R then
+            if temp_W - temp_R >= (2**ABUS_WIDTH)/2 then
+                MID <= '1';
+            else
+                MID <= '0';
+            end if;
+          elsif temp_W < temp_R then
+            if temp_R - temp_W <= (2**ABUS_WIDTH)/2 then
+                MID <= '1';
+            else
+                MID <= '0';
+            end if;
+          end if;
+    end if;
 end process P_MID;
 
 end behavior;

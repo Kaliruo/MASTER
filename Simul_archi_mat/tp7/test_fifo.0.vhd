@@ -72,7 +72,7 @@ end process P_TIMEOUT;
 ------------------------------------------------------------------
 -- instanciation et mapping du composant fifo
 fifo1 : entity work.fifo(behavior)  -- behavioural simulation
-			generic map (W_DATA,W_ADR)
+			--generic map (W_DATA,W_ADR)
 --fifo1 : entity work.fifo(behavior)  -- post-synthesis functional simulation
 			port map (E_CLK,E_RST,E_REN,E_WEN,E_DI,E_DO,E_EMPTY,E_MID,E_FULL);
 

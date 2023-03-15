@@ -1,45 +1,9 @@
 Time resolution is 1 ps
-Error: Empty flag not set (or others wrong) !
-Time: 25 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
-Error: Empty flag still set (or others wrong) !
-Time: 35 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
-Error: Empty flag not set (or others wrong) !
-Time: 45 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
-Error: Mid flag not set (or others wrong) !
-Time: 75 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
-Error: Full flag not set (or others wrong) !
-Time: 95 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
-Error: Full flag not set (or others wrong) !
-Time: 115 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
-Error: Full flag not set (or others wrong) !
-Time: 135 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
-Error: Empty flag not set (or others wrong) !
-Time: 175 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
-Error: Empty flag not set (or others wrong) !
-Time: 185 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
 Error: Data element READ is wrong (must be 0) !
 Time: 185 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
 Failure: FIN DE SIMULATION
 Time: 205 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
 $finish called at time : 205 ns : File "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd" Line 220
-Error: Empty flag not set (or others wrong) !
-Time: 25 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
-Error: Empty flag still set (or others wrong) !
-Time: 35 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
-Error: Empty flag not set (or others wrong) !
-Time: 45 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
-Error: Mid flag not set (or others wrong) !
-Time: 75 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
-Error: Full flag not set (or others wrong) !
-Time: 95 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
-Error: Full flag not set (or others wrong) !
-Time: 115 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
-Error: Full flag not set (or others wrong) !
-Time: 135 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
-Error: Empty flag not set (or others wrong) !
-Time: 175 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
-Error: Empty flag not set (or others wrong) !
-Time: 185 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
 Error: Data element READ is wrong (must be 0) !
 Time: 185 ns  Iteration: 1  Process: /test_fifo/P_TEST  File: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
 Failure: FIN DE SIMULATION

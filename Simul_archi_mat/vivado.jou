@@ -2,74 +2,35 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Fri Mar 10 11:29:23 2023
-# Process ID: 20149
+# Start of session at: Wed Mar 15 12:24:02 2023
+# Process ID: 37796
 # Current directory: /home/lnc3770a/Cours/MASTER/Simul_archi_mat
 # Command line: vivado
 # Log file: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/vivado.log
 # Journal file: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/vivado.jou
-# Running On: pc-u3-305-11, OS: Linux, CPU Frequency: 800.291 MHz, CPU Physical cores: 8, Host memory: 16484 MB
+# Running On: pc-u3-305-09, OS: Linux, CPU Frequency: 3974.722 MHz, CPU Physical cores: 8, Host memory: 16483 MB
 #-----------------------------------------------------------
 start_gui
 open_project /home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_tp7/project_tp7.xpr
 update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
 launch_simulation
-source test_fifo.tcl
-restart
-run 10 s
-close_sim
 launch_simulation
-source test_fifo.tcl
-restart
-run 10 s
-close_sim
-launch_simulation
-source test_fifo.tcl
-restart
-run 10 s
-close_sim
-launch_simulation
-source test_fifo.tcl
-restart
-run 10 s
-close_sim
-launch_simulation
-source test_fifo.tcl
-restart
-run 10 s
-close_sim
-launch_simulation
-source test_fifo.tcl
-restart
-run 10 s
-restart
-run 10 s
-close_sim
-launch_simulation
-source test_fifo.tcl
-restart
-run 10 s
-close_sim
-launch_simulation
-source test_fifo.tcl
-restart
-run 10 s
-close_sim
-launch_simulation
-source test_fifo.tcl
-restart
-run 10 s
-close_sim
 launch_simulation
 launch_simulation
 source test_fifo.tcl
 restart
 run 10 s
-restart
-run 10 s
-close_sim
-launch_simulation
-source test_fifo.tcl
-restart
-run 10 s
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_simulation -mode post-synthesis -type timing
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_design
+launch_simulation -mode post-synthesis -type timing
+launch_simulation -mode post-synthesis -type timing
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
 close_sim
