@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1678882420" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/fifo.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1679062567" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/fifo.dcp">
   <File Type="VDS-TIMINGSUMMARY" Name="fifo_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="fifo.dcp"/>
   <File Type="RDS-UTIL-PB" Name="fifo_utilization_synth.pb"/>
@@ -25,7 +25,14 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/fifo.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/fifo.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -36,7 +43,16 @@
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_1"/>
         <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../tp7/fifo_synth.pre.tcl">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="UsedInSteps" Val="synth_1;SYNTH_DESIGN;TCL.PRE"/>
       </FileInfo>
     </File>
     <Config>
@@ -45,6 +61,6 @@
   </FileSet>
   <Strategy Version="1" Minor="2">
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
-    <Step Id="synth_design"/>
+    <Step Id="synth_design" PreStepTclHook="$PPRDIR/../tp7/fifo_synth.pre.tcl"/>
   </Strategy>
 </GenRun>

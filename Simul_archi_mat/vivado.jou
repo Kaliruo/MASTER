@@ -2,35 +2,36 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Wed Mar 15 12:24:02 2023
-# Process ID: 37796
+# Start of session at: Fri Mar 17 15:31:22 2023
+# Process ID: 74761
 # Current directory: /home/lnc3770a/Cours/MASTER/Simul_archi_mat
 # Command line: vivado
 # Log file: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/vivado.log
 # Journal file: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/vivado.jou
-# Running On: pc-u3-305-09, OS: Linux, CPU Frequency: 3974.722 MHz, CPU Physical cores: 8, Host memory: 16483 MB
+# Running On: pc-u3-305-09, OS: Linux, CPU Frequency: 4060.002 MHz, CPU Physical cores: 8, Host memory: 16483 MB
 #-----------------------------------------------------------
 start_gui
 open_project /home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_tp7/project_tp7.xpr
 update_compile_order -fileset sources_1
+close_project
+create_project project_7test /home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_7test -part xc7z020clg400-1
+set_property board_part digilentinc.com:zybo-z7-20:part0:1.1 [current_project]
+set_property  ip_repo_paths  /nfs/xilinx/vivado-library [current_project]
+update_ip_catalog
+set_property target_language VHDL [current_project]
+add_files -norecurse /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/fifo.0.vhd
 update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+add_files -fileset utils_1 -norecurse /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/fifo_synth.pre.tcl
+set_property STEPS.SYNTH_DESIGN.TCL.PRE [ get_files /home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/fifo_synth.pre.tcl -of [get_fileset utils_1] ] [get_runs synth_1]
 launch_simulation
-launch_simulation
-launch_simulation
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
 launch_simulation
 source test_fifo.tcl
 restart
 run 10 s
-launch_runs synth_1 -jobs 8
-wait_on_run synth_1
-launch_simulation -mode post-synthesis -type timing
-reset_run synth_1
-launch_runs synth_1 -jobs 8
-wait_on_run synth_1
-close_design
-launch_simulation -mode post-synthesis -type timing
-launch_simulation -mode post-synthesis -type timing
-reset_run synth_1
-launch_runs synth_1 -jobs 8
-wait_on_run synth_1
 close_sim

@@ -2,12 +2,12 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Wed Mar 15 13:13:43 2023
-# Process ID: 51034
+# Start of session at: Fri Mar 17 15:16:10 2023
+# Process ID: 71265
 # Current directory: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_tp7/project_tp7.runs/synth_1
 # Command line: vivado -log fifo.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fifo.tcl
 # Log file: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_tp7/project_tp7.runs/synth_1/fifo.vds
 # Journal file: /home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_tp7/project_tp7.runs/synth_1/vivado.jou
-# Running On: pc-u3-305-09, OS: Linux, CPU Frequency: 1150.432 MHz, CPU Physical cores: 8, Host memory: 16483 MB
+# Running On: pc-u3-305-09, OS: Linux, CPU Frequency: 800.060 MHz, CPU Physical cores: 8, Host memory: 16483 MB
 #-----------------------------------------------------------
 source fifo.tcl -notrace

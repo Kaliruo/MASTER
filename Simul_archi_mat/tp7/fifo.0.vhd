@@ -22,7 +22,7 @@ entity fifo is
 		DBUS_WIDTH : natural := 32;
 
 		-- largeur du bus adr R/W pour acces fifo
-		ABUS_WIDTH : natural := 3 );	-- soit 2**3 emplacements
+		ABUS_WIDTH : natural := 5 );	-- soit 2**3 emplacements
 
 	-- definition des entrees/sorties
 	port 	(
@@ -68,11 +68,10 @@ P_ACCESS : process (CLK)
 begin
 if rising_edge(CLK) then
         if REN = '1' then
-            DO<=(others => 'Z');
+            DO<=(others => 'Z');    -- ENLEVER POUR BRAM
             if WEN = '0' then
                 REGS(CONV_INTEGER(W_ADR))<=DI;
-            end if;
-    
+            end if;    
         elsif REN = '0' and WEN = '0' and EMPTY = '1' then
             DO <= (others => '0');
             REGS(CONV_INTEGER(W_ADR))<=DI;
@@ -120,7 +119,6 @@ begin
 	if rising_edge(CLK) then
 		-- test du RST
 		if RST='0' then
-		    DO <= (others =>'Z');
 			R_ADR <= (others => '0');
 		elsif (REN = '0' and EMPTY='0' and WEN = '1') OR (REN = '0' and WEN = '0' AND FULL = '1') or (WEN='0' AND FULL='1')then
 		  R_ADR <= R_ADR + '1';
@@ -181,8 +179,9 @@ end process P_FULL;
 -- Process P_MID indique l'etat au moins a moitie plein de la FIFO
 --		'1' FIFO au moins a moitie pleine '0' sinon, cette information
 --		 etant mise a jour sur front montant d'horloge
+
+
 P_MID:	process(CLK)
-	--variable temp_W : std_logic_vector (ABUS_WIDTH-1 downto 0);
 	variable temp_W : integer;
     variable temp_R : integer;
 begin
@@ -221,6 +220,8 @@ begin
           end if;
     end if;
 end process P_MID;
+
+
 
 end behavior;
 

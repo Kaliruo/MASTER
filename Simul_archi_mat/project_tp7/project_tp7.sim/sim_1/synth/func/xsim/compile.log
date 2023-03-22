@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_tp7/project_tp7.sim/sim_1/synth/func/xsim/test_fifo_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fifo'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'test_fifo'

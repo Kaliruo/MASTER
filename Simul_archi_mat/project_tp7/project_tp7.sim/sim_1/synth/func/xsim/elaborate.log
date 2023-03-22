@@ -1,0 +1,7 @@
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /nfs/xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot test_fifo_func_synth xil_defaultlib.test_fifo -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-8801] cannot find architecture 'behavior' in entity 'fifo' [/home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd:76]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit test_fifo in library work failed.

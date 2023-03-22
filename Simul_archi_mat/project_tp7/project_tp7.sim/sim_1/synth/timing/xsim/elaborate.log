@@ -1,8 +1,0 @@
-Vivado Simulator v2022.1
-Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
-Running: /nfs/xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot test_fifo_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.test_fifo xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-ERROR: [VRFC 10-666] expression has 4 elements; expected 32 [/home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd:77]
-ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

@@ -1,10 +1,8 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/project_tp7/project_tp7.sim/sim_1/synth/timing/xsim/test_fifo_time_synth.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RAM32M_UNIQ_BASE_
-INFO: [VRFC 10-311] analyzing module RAM32M_HD10
-INFO: [VRFC 10-311] analyzing module RAM32M_HD6
-INFO: [VRFC 10-311] analyzing module RAM32M_HD7
-INFO: [VRFC 10-311] analyzing module RAM32M_HD8
-INFO: [VRFC 10-311] analyzing module RAM32X1D_UNIQ_BASE_
-INFO: [VRFC 10-311] analyzing module RAM32X1D_HD9
 INFO: [VRFC 10-311] analyzing module fifo
 INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'test_fifo'
+ERROR: [VRFC 10-2927] 'fifo' has only 0 generics [/home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd:74]
+ERROR: [VRFC 10-9458] unit 'behavior' is ignored due to previous errors [/home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd:33]
+INFO: [VRFC 10-8704] VHDL file '/home/lnc3770a/Cours/MASTER/Simul_archi_mat/tp7/test_fifo.0.vhd' is ignored due to errors
