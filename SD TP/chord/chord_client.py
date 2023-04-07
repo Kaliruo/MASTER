@@ -13,11 +13,8 @@ def printer():
         serversocket.listen(5)
         print('listening on port:', serversocket.getsockname()[1])
         while True:
-            #print("Test1")
             (clientsocket, address) = serversocket.accept()
-            #print("Test2")
             json_data = json_recv(clientsocket)
-            #print("Test3")
             print(json_data)
 
 printer_thread = threading.Thread(target=printer)
@@ -27,5 +24,9 @@ data = [{'test':22}, 'other test', 88]
 for _ in range(3):
     json_send('localhost', 8001, data)
     print("Data envoyée")
+query('localhost',8001,5)
+print("query envoyee")
+set(5,10)
+print("set envoyé")
 
 
