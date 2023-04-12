@@ -7,6 +7,9 @@ from chord_tools import *
 # host = socket.gethostname()
 # print(host)
 
+#SSH : pc-u3-305-10
+
+
 def printer():
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as serversocket:
         serversocket.bind(('', 9000))
@@ -22,7 +25,7 @@ printer_thread.start()
 
 data = [{'test':22}, 'other test', 88]
 for _ in range(3):
-    json_send('localhost', 8001, data)
+    json_send('pc-u3-305-10', 8001, data)
     print("Data envoyée")
 query('localhost',8001,5)
 print("query envoyee")
