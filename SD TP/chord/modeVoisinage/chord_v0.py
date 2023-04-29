@@ -6,7 +6,7 @@ from chord_tools import *
 #host = socket.gethostname()
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as serversocket:
-    serversocket.bind(('', 8001))
+    serversocket.bind(('', 9000))
     serversocket.listen(5)
     print('listening on port:', serversocket.getsockname()[1])
     while True:
