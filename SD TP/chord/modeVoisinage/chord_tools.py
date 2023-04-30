@@ -57,12 +57,13 @@ def join(ip, port,ip2,port2) :
 class MyNode :
     
     def __init__(self) :
-        self.ipSuiv = 0
-        self.portSuiv = 0
-        self.idSuiv = 0
+        self.voisin= {}
         self.ipPrec =  0
         self.portPrec = 0
         self.idPrec = 0
+        self.ipSuiv =  0
+        self.portSuiv = 0
+        self.idSuiv = 0
         self.values= {}
         self.ip = 0
         self.port = 0
@@ -173,9 +174,8 @@ class MyNode :
         
         for key in newValues :
             self.values.pop(key)
-            
-        self.liNode.append(id)  
-          
+              
+        linode = self.liNode.append(id)
         data ={'request' : 'OK',
             'id' : id,
             'ip' : ip,
@@ -187,29 +187,106 @@ class MyNode :
             'portSuiv' : self.port,
             'idSuiv' : self.id,
             'values' : newValues,
-            'liNode' : self.liNode
+            'liNode' : linode
             
         }    
         json_send(ip,port,data)
         
-        self.update(ip,port,id)
+
+
+        data ={'request' : 'UPDATE',
+            'new_ip' : ip,
+            'new_port' : port,
+            'new_id' : id               
+        }    
+        json_send(self.ipPrec,self.portPrec,data)
+        self.ipPrec = ip
+        self.portPrec = port
+        self.idPrec = id
        
         
         
         
     #sent to the previous node : if that node is impacted, update its NT and send to the previous node again (else: stop)
     def update(self, ipNew, portNew, idNew) :
-        if self.ipPrec != self.ip :
+        if self.id < 65536/2 : 
+            if idNew < 65536/2+self.id :
+                if (self.idSuiv < self.id and (idNew> self.id or idNew < self.idSuiv)) or (idNew> self.id and idNew < self.idSuiv) :
+                    self.ipSuiv =ipNew
+                    self.portSuiv = portNew
+                    self.idSuiv = idNew 
+                
+                
+        else :
+            if idNew < (65536/2+self.id)% 65536:
+                if (self.idSuiv < self.id and (idNew> self.id or idNew < self.idSuiv)) or (idNew> self.id and idNew < self.idSuiv) :
+                    self.ipSuiv =ipNew
+                    self.portSuiv = portNew
+                    self.idSuiv = idNew 
+
+        if self.id != idNew :
+            self.liNode.append(idNew)        
             data ={'request' : 'UPDATE',
                 'new_ip' : ipNew,
                 'new_port' : portNew,
                 'new_id' : idNew                
             }    
             json_send(self.ipPrec,self.portPrec,data)
-            
-        self.ipPrec = ipNew
-        self.portPrec = portNew
-        self.idPrec = idNew
+
+    def tableVoisin(self,ip,port,id) :
+        j =2
+        while j <= 65536 :
+            idVois=id+((65536/j)%65536)
+            self.voisin[idVois]= self.whois(ip,port,idVois)
+            j*=2
+        
+
+    def whois(self,ip,port,idWan) :
+        go = [self.ip, self.port]
+        if idWan > self.id :
+            for cle,val in self.voisin.items :
+                if cle < idWan :
+                    go = val
+                else :
+                    if cle > idWan :
+                        data ={'request' : 'WHOIS',
+                        'ip' : self.ip,
+                        'port' : self.port,
+                        'id_wanted' : idWan                
+                        }                        
+                        json_send(go[0],go[1],data)
+        else :
+            for cle,val in self.voisin.items :
+                if cle < idWan or (cle > idWan and cle > self.id) :
+                    go = val
+                else :
+                    if cle < self.id and cle > idWan :
+                        data ={'request' : 'WHOIS',
+                        'ip' : self.ip,
+                        'port' : self.port,
+                        'id_wanted' : idWan                
+                        }                        
+                        json_send(go[0],go[1],data)
+        data ={'request' : 'WHOIS',
+        'ip' : self.ip,
+        'port' : self.port,
+        'id_wanted' : idWan                
+        }                        
+        json_send(go[0],go[1],data)
+
+    def iam(self,ip,port,idwan) :
+        if self.isChild(idwan) :
+            data ={'request' : 'IAM',
+            'ip' : self.ip,
+            'port' : self.port,
+            'id' : self.id    ,
+            'id_wanted ' : idwan            
+            }                        
+            json_send(ip,port,data)
+        else :
+            self.whois(ip,port,idwan)
+
+
         
 
 

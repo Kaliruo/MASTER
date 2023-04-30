@@ -16,4 +16,4 @@ node.values = {}
 node.liNode=[]
 
 print(query(node.ip,node.port,'localhost',8002,40))
-print(join(node.ip,node.port,'localhost',8002))
+#print(join(node.ip,node.port,'localhost',8002))

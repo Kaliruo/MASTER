@@ -48,3 +48,12 @@ def printer(node):
                 node.portSuiv = json_data['new_port']
                 node.idSuiv = json_data['new_id']
                 print("UN NOEUD A ETE AJOUTÉ")
+            if json_data['request'] == 'WHOIS' :  
+                print("REQUETE WHOIS")  
+                node.iam(json_data['ip'],json_data['ip'],json_data['id_wanted'])               
+            if json_data['request'] == 'IAM' :
+                print("IAM RECUE")    
+                print("Ip :",json_data['ip'], "port :", json_data['port'], "id :", json_data['id'])                
+                donnee=[json_data['ip'], "port :", json_data['port']]
+                #return donnee
+                

@@ -1,11 +1,5 @@
-start
+Pas de test
 
-``` bash
-python3 chord_v0.py
-```
-in a terminal and
+Toutes les fonctions sont dans chord_tools
 
-``` bash
-python3 chord_client.py
-```
-in another.
+testRequest.py sert pour traiter les messages reçues par les noeuds.
